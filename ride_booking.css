@@ -1,0 +1,1433 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.hide {
+    display: none !important;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url();
+    background-size: 50%;
+}
+
+.flex-box-space-btw {
+    display: flex;
+    justify-content: space-between;
+}
+
+.non_selectable_txt {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14vh;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(30, 45, 81);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+header nav ul li a:hover {
+    color: orange;
+}
+
+header nav ul li a img {
+    width: 6.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 7px;
+}
+
+.loginPopupOverlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 5;
+}
+
+.loginPop {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 60%;
+    height: 50rem;
+    z-index: 2;
+    transition: 1s;
+}
+
+.loginPop>.loginPopRemove {
+    right: -2%;
+    top: -4%;
+}
+
+.loginPop>.logoSec {
+    position: absolute;
+    width: 35%;
+    height: 100rem;
+    margin-top: 0%;
+    background-image: url(../IMG_FILE/spritupdate.png);
+    background-size: 100% 50rem;
+    background-repeat: no-repeat;
+}
+
+.loginPop>.formSec,
+.otpSec {
+    background-color: white;
+    width: 65%;
+    height: 100%;
+    margin: 0;
+    float: right;
+    padding: 1.5rem 2rem;
+}
+
+.fleetAndPricingOverlay,
+.selectCity-overlay,
+.loginPopupOverlay,
+.myAccountOverlay,
+.paymentDoneOrNotOverlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 5;
+    overflow: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+.otpSec>input {
+    outline: none;
+    width: 100%;
+    color: #000;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    height: 3.4rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.otpSec>.otpInfo {
+    font-weight: 300;
+    line-height: 2.8rem;
+    font-size: 1.4rem;
+}
+
+.otpSec>input:focus {
+    border-bottom: 1px solid rgb(29, 115, 226);
+    box-shadow: rgba(7, 7, 7, 0.411) 2px 2px 10px;
+}
+
+.otpSec>button {
+    outline: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    letter-spacing: 1px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    height: 3.4rem;
+}
+
+.otpSec>button:hover {
+    background-color: #e0e0e0;
+}
+
+.loginPop>.formSec>.heading,
+.otpSec>.otp_heading {
+    font-size: 1.4rem;
+    color: #878787;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    font-family: Montserrat;
+    padding: 1rem 0;
+}
+
+.loginPop>.formSec>.heading>span {
+    cursor: pointer;
+}
+
+.loginPop>.formSec>.heading>.currForm {
+    border-bottom: 1px solid orange;
+    padding-bottom: 0.5rem;
+    color: #1e2d51;
+}
+
+.fb_google {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.fb_google>div {
+    width: 48%;
+    height: 4.1rem;
+}
+
+.fb_google>div>button {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0 4.3rem;
+    border: none;
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.fb_google>div>button::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.4rem;
+    height: 100%;
+}
+
+.fb_google>.fbLogin>button {
+    background-color: #4c69ba;
+    background-image: linear-gradient(#4c69ba, #3b55a0);
+    text-shadow: 0 -1px 0 #354c8c;
+    text-align: left;
+}
+
+.fb_google>.fbLogin>button::before {
+    background-color: #354f88 !important;
+    border-right: #364e92 1px solid;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png) 7px 9px no-repeat;
+    background-size: auto;
+    padding: 0 1.7rem;
+    background-size: 1.7rem;
+}
+
+.fb_google>.googleLogin>button {
+    background: #dd4b39;
+    text-align: left;
+}
+
+.fb_google>.googleLogin>button::before {
+    background-color: #ce3e26 !important;
+    border-right: #bb3f30 1px solid;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png) 7px 9px no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: auto;
+    padding: 0 1.7rem;
+    background-size: 1.7rem;
+}
+
+.divider {
+    position: relative;
+    border-bottom: 1px dashed rgba(51, 51, 51, 0.17);
+    margin: 8% 0;
+}
+
+.divider>span {
+    background-color: #fff;
+    border-radius: 50%;
+    color: #666;
+    position: absolute;
+    top: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+    left: 50%;
+    border: 1px solid #ccc;
+    text-align: center;
+    transform: translateX(-50%);
+    line-height: 2.8rem;
+}
+
+.loginPop {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 60%;
+    height: 50rem;
+    z-index: 2;
+    transition: 1s;
+}
+
+.loginPop>.loginPopRemove {
+    right: -2%;
+    top: -4%;
+}
+
+.loginPop>.logoSec {
+    position: relative;
+    width: 35%;
+    height: 100rem;
+    margin-top: 0%;
+    background-image: url(../IMG_FILE/spritupdate.png);
+    background-size: 100% 50rem;
+    background-repeat: no-repeat;
+}
+
+.loginPop>.formSec,
+.otpSec {
+    background-color: white;
+    width: 65%;
+    height: 100%;
+    margin: 0;
+    float: right;
+    padding: 1.5rem 2rem;
+}
+
+.formSec>#login_form>.inputCont>input,
+#signup_form input {
+    outline: 0;
+    width: 100%;
+    color: #000;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.formSec>form input::placeholder {
+    font-size: 1.1rem;
+    color: rgba(42, 40, 40, 0.575);
+}
+
+.formSec>#login_form>.checkbox {
+    position: relative;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.formSec>#login_form>.checkbox::after {
+    content: "Forgot?";
+    position: absolute;
+    right: 1%;
+}
+
+.formSec>form>.login-Btn {
+    font-size: 1.8rem;
+    height: auto;
+    padding: 0.8rem 0;
+    outline: 0;
+    border: none;
+    color: #fff;
+    font-weight: 300;
+    background-color: #2d3b55;
+    letter-spacing: 1px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.formSec>form>.login-Btn+div {
+    margin: auto;
+    width: 40% !important;
+}
+
+.formSec>form>.login-Btn+div>a {
+    color: gray;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.formSec>form>.login-Btn+div>a:hover {
+    color: #2d3b55;
+}
+
+.hide {
+    display: none !important;
+}
+
+.formSec>#signup_form>div {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formSec>#signup_form>div>input {
+    width: 47%;
+}
+
+#signup_form>div {
+    margin-bottom: 1.5rem;
+}
+
+#signup_form input {
+    margin-bottom: 1px;
+}
+
+#signup_form>div input+.required_field,
+.warning {
+    margin: 1px 0;
+    color: red;
+    display: none;
+}
+
+.welcome-collapse-content {
+    position: absolute;
+    top: 170%;
+    width: 16rem;
+    background-color: white;
+    color: #1e2d51;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    display: none;
+}
+
+.welcomeNav.active+.welcome-collapse-content {
+    display: block;
+}
+
+.welcome-collapse-content>p {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.welcome-collapse-content>p:hover {
+    background-color: #1e2d51;
+    color: white;
+    transition: 0.2s;
+}
+
+.myAccount {
+    position: absolute;
+    width: 90%;
+    background-color: white;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    z-index: 10;
+    display: flex;
+}
+
+.myAccount>.left-side {
+    width: 20%;
+    box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+    text-align: center;
+}
+
+.myAccount>.left-side>.biker-icon {
+    width: 11rem;
+    height: 11rem;
+    background-position: -8379px 0;
+    margin: auto;
+    margin-top: 50%;
+    margin-bottom: 5%;
+    background-image: url(images/covid_update/cross.png);
+}
+
+.myAccount .left-side .user-name {
+    margin-bottom: 0;
+    color: #1d2d51;
+    font-weight: 500;
+    font-size: 2.1rem;
+}
+
+.myAccount .left-side .user-mail {
+    margin-bottom: 1.5rem;
+    color: #1d2d51;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.myAccount .left-side .onn-credits {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.myAccount .left-side hr {
+    margin-bottom: 2.5rem;
+}
+
+.myAccount .left-side button {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    border: none;
+    outline: none;
+    color: #1d2d51;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    text-align: start;
+    padding: 0 10%;
+    transition: 0.2s;
+    margin-bottom: 3px;
+}
+
+.myAccount .left-side button:hover {
+    color: white;
+    background-color: #1d2d51;
+    transition: 0.2s;
+}
+
+.bookingHistory-myAccount.active,
+.yourProfile-myAccount.active {
+    color: white !important;
+    background-color: #1d2d51 !important;
+    transition: 0.2s;
+}
+
+.myAccount .right-side {
+    width: 80%;
+}
+
+.historyCont {
+    background-image: url(images/history-bg/history-bg.svg);
+    width: 100%;
+    height: 100%;
+    background-size: 73%;
+    background-repeat: no-repeat;
+    background-position: 176px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-booking-history {
+    width: 63%;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+    text-align: center;
+    padding: 7.3rem 1rem;
+    color: red;
+}
+
+.right-side .yourProfileCont {
+    height: 100%;
+    width: 100%;
+    padding: 3% 3% 0% 3%;
+}
+
+.yourProfileCont .edit-account,
+.change-password {
+    padding: 1.6rem;
+    box-shadow: 0 0 1px rgba(31, 31, 31, 0.5);
+    min-height: 50%;
+    position: relative;
+}
+
+.yourProfileCont .change-password {
+    margin-top: 4%;
+    max-height: 25rem;
+    min-height: 20rem;
+}
+
+.change-password input,
+.edit-account input,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea {
+    border: none;
+    float: left;
+    border-bottom: 1px solid #c3c1c1;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    width: 44%;
+    margin: 1.5% 0;
+    margin-right: 4%;
+    height: 35px;
+    background: white;
+    padding: 1%;
+    outline: none;
+}
+
+.change-password input:focus,
+.edit-account input:focus,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea:focus {
+    box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+}
+
+.change-password input:disabled,
+.edit-account input:disabled,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea:disabled {
+    background-color: rgba(197, 191, 191, 0.116);
+}
+
+.edit-account textarea {
+    height: auto !important;
+    width: auto !important;
+}
+
+.edit-account button,
+.change-password button {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    background-color: #aeafb1;
+    padding: 7px 12px;
+    color: #fff;
+    border: 0;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    font-size: 14px;
+}
+
+.right-side .removePencilIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-position: -5663px 0;
+    background-image: url(images/covid_update/cross.png);
+    position: absolute;
+    right: 3.4rem;
+    top: 2.2rem;
+    font-size: 1.8rem;
+}
+
+.removeMyAccount {
+    right: -2%;
+    top: -3%;
+}
+
+.selectCity-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 5;
+    overflow: auto;
+}
+
+.selectCity>.removeSelectCity,
+.loginPop>.loginPopRemove,
+.removeMyAccount,
+.selctPickupRemove {
+    position: absolute;
+    border-radius: 50%;
+    width: 3.3rem;
+    height: 3.3rem;
+    background-position: -7466px 0;
+    cursor: pointer;
+}
+
+.selectCity {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    z-index: 5;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+.selectCity>.removeSelectCity {
+    top: -2.5%;
+    right: -1.8%;
+}
+
+.selectCity>.searchArea {
+    width: 50%;
+    padding: 5% 1.9%;
+    float: left;
+    height: 100%;
+}
+
+.selectCity>.searchArea input {
+    width: 60%;
+    height: 3.4rem;
+    font-size: 1.3rem;
+    border: 1px solid rgba(153, 149, 149, 0.479);
+    padding: 1.2rem;
+    background: url(https://www.onnbikes.com/img/citysearch.svg) right no-repeat #f9f9f9;
+    background-size: auto;
+    border: none;
+    background-size: 25px 25px;
+    box-shadow: 0 0 3px #dad8d8;
+}
+
+.CitySearchInputInfo {
+    margin-top: 30%;
+    font-size: 1.4rem;
+}
+
+.city-search-input-info-para2 {
+    font-size: 2.1rem;
+    font-weight: 200;
+    margin-top: 3%;
+}
+
+.selectCity>.cityArea {
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white !important;
+}
+
+.selectCity>.cityArea img {
+    width: 12rem;
+    text-align: center;
+}
+
+.selectCity>.cityArea>.cityCont {
+    border: 1px solid rgba(148, 144, 144, 0.534);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selectCity>.cityArea>.cityCont>div>p {
+    color: #1e2d51;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.9rem;
+}
+
+.rideNow {
+    width: 102rem;
+    margin: auto;
+    height: 5.5rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rideNow>div {
+    box-shadow: rgba(100, 100, 111, 0.2) 4px 7px 10px 4px;
+    background-color: white;
+    width: 20%;
+    height: 100%;
+    float: left;
+    font-size: 1.6rem;
+    border-right: 0.2px solid rgba(214, 211, 211, 0.151);
+}
+
+.rideNow>div>p {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collapsible-content-tri::after {
+    content: "\25be";
+    position: absolute;
+    right: 2%;
+    transform: scale(1.7);
+}
+
+.collapsible-content-tri {
+    position: relative;
+    cursor: pointer;
+}
+
+.collapse-btn-rideNow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collapse-content-rideNow {
+    background-color: white;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.collapse-content-rideNow>p {
+    margin: 0;
+    padding: 1rem;
+}
+
+.collapse-btn-rideNow.active+.collapse-content-rideNow {
+    height: auto;
+}
+
+.collapse-content-rideNow>p:hover {
+    background: rgb(30, 45, 81);
+    color: white;
+}
+
+.rideNow button {
+    height: 100%;
+    width: 100%;
+    font-size: 2rem;
+    background-color: rgb(30, 45, 81);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.calender,
+.calender_timing {
+    margin-top: -5%;
+    width: 160%;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.calender>.month,
+.calender>.days,
+.calender_timing .wholeDate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2d51;
+    color: white;
+    padding: 0 1.8rem;
+}
+
+.calender>.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.calender>.dates>div {
+    border-right: 0.1px solid rgba(170, 164, 164, 0.568);
+    border-bottom: 0.1px solid rgba(170, 164, 164, 0.568);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 15%;
+}
+
+.calender .nextMonthDate,
+.calender .prevMonthDate {
+    color: rgba(146, 135, 135, 0.801);
+}
+
+.calender .past {
+    color: rgba(172, 165, 165, 0.301) !important;
+}
+
+.calender .presentNFuture:hover {
+    background-color: rgba(170, 164, 164, 0.568);
+}
+
+.startDateSelector img,
+.endDateSelector img {
+    margin-left: 10%;
+}
+
+.calender_timing .availableTimings {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.2rem;
+}
+
+.calender_timing .availableTimings div {
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.calender_timing .availableTimings div:hover {
+    background-color: rgba(128, 128, 128, 0.383);
+    transition: 0.5s;
+}
+
+.calenderStartDate,
+.calenderEndDate {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.calenderStartDate strong,
+.calenderEndDate strong {
+    text-align: center;
+}
+
+.calenderStartDate span,
+.calenderEndDate span {
+    font-size: 1.3rem;
+    padding: 0;
+    text-align: center;
+}
+
+.hamburgerMenu {
+    display: none;
+    width: 4.8rem;
+    height: 4rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.scrollHamburger>div {
+    background-color: gray !important;
+}
+
+.hamburgerMenu>div {
+    width: 90%;
+    height: 10%;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 0.6rem;
+    background-color: gray;
+}
+
+.mobileNavBar {
+    position: absolute;
+    background-color: white;
+    top: 9rem;
+    height: 0;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.5fs;
+    z-index: 2;
+}
+
+.mobileNavBar.active {
+    height: 425%;
+    border-top: 1px solid rgb(197, 186, 186);
+    transition: 0.5s;
+}
+
+.mobileNavBar>ul>li {
+    list-style: none;
+    padding: 1.2rem 2rem;
+}
+
+.mobileNavBar>ul>li>a:hover {
+    color: orangered;
+}
+
+.mobileNavBar>ul>li>a {
+    text-decoration: none;
+    color: rgb(30, 45, 81);
+}
+
+.filter-bar {
+    margin-top: 1.8rem;
+    width: 20.5rem;
+    height: 38rem;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+    float: left;
+}
+
+.filter-bar .filter-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+}
+
+.filter-bar .filter-heading a {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    color: #337ab7;
+}
+
+.filter-bar h6 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-top: 4%;
+    padding-left: 4%;
+    margin: 1rem 0;
+}
+
+.filter-bar .manufacturer-checkbox-cont,
+.model-checkbox-cont,
+.vehicle-checkbox-cont {
+    min-height: 2rem;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 7.5rem;
+    padding-left: 2rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.filter-bar .manufacturer-checkbox-cont label,
+.model-checkbox-cont label,
+.vehicle-checkbox-cont label {
+    display: block;
+}
+
+.save-more {
+    width: 25rem;
+    margin: auto;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: #1e2d51;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.save-more .calender-icon {
+    background-color: rgb(235, 127, 35);
+    margin-right: 3%;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.save-more a {
+    color: #1e2d51;
+}
+
+.bike-showcase {
+    float: right;
+    margin-top: 1.8rem;
+    width: 82%;
+    margin-right: 1.2rem;
+    height: 60.5rem;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    overflow-y: scroll;
+}
+
+.bike-showcase>div {
+    height: 70%;
+    background-color: white;
+    box-shadow: 0 0 2px #dddfe0, 0 0 2px #dddfe0;
+    height: 30rem;
+    margin: 1rem 1rem;
+    padding: 0 1rem;
+    line-height: 2rem;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bike-showcase>div:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px;
+    transition: 0.5s;
+}
+
+.bike-showcase>div::after {
+    content: "5 Left";
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: rgb(45, 196, 132);
+    width: 20%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.bike-showcase .bike-img-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.bike-showcase img {
+    width: 26rem;
+}
+
+.bike-showcase .bike-name {
+    color: rgb(30, 45, 81);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.free-N-excess,
+.price-N-bookNow {
+    display: flex;
+    margin: 1.1rem 0;
+    font-size: 1.3rem;
+    color: #a2a2a2;
+}
+
+.free-N-excess .excess {
+    margin-left: 1.7rem;
+}
+
+.price-N-bookNow .price {
+    font-size: 2.1rem;
+    color: #3c3d40;
+    border-bottom: 2px solid #d4d4d4;
+    height: 4.7rem;
+    width: 8rem;
+    line-height: 4.6rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.price-N-bookNow button {
+    background-color: #1e2d51;
+    border: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    height: 4.7rem;
+    width: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.selectPickupOverlay {
+    background-color: rgba(0, 0, 0, 0.507);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 1200%;
+}
+
+.selectPickup {
+    position: relative;
+    min-width: 60%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    padding: 2.5rem 0;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.selctPickupRemove {
+    right: -15px;
+    top: -15px;
+}
+
+.selectPickup>p {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.selectPickup>hr {
+    color: rgba(216, 207, 207, 0.452);
+    margin-bottom: 2rem;
+}
+
+#expand {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.new {
+    border-radius: 6px;
+    position: relative;
+    width: 24rem;
+    margin: 1.4rem 1.5rem 0.8rem;
+    height: 14.3rem;
+    padding-top: 0.4rem;
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+    color: black;
+    transition: all 0.2s ease-in-out;
+    background-color: rgb(247, 247, 247);
+}
+
+.new:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.new .plocation {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2% 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    color: #525758;
+}
+
+.new .ptiming {
+    margin: 2% 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    color: #525758;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.new .preference {
+    margin: 1% 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    color: #525758;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.new .bike_available {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: rgb(0, 180, 104);
+    color: white;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 0 5%;
+}
+
+@media only screen and (max-width: 1285px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media only screen and (max-width: 1259px) {
+    .loginPop {
+        width: 70%;
+    }
+    .loginPop .formSec,
+    .loginPop .otpSec {
+        width: 62%;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .bike-showcase {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+    }
+    .loginPop {
+        right: 10% !important;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1045px) {
+    .bike-showcase {
+        width: 78%;
+    }
+    .loginPop {
+        right: 23% !important;
+        width: 50%;
+    }
+    .loginPop .logoSec {
+        display: none;
+    }
+    .loginPop .formSec,
+    .loginPop .otpSec {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 979px) {
+    html {
+        font-size: 58%;
+    }
+    .rideNow {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 70%;
+        height: 17rem;
+        background-color: transparent;
+    }
+    .rideNow>div {
+        width: 100%;
+        height: 5rem;
+        border: 0.8px solid rgba(173, 169, 169, 0.185);
+        background-color: white;
+    }
+    .rideNowBtn {
+        grid-column: 1/-1;
+        width: 98%;
+        height: 4rem;
+    }
+    .loginPop {
+        right: 20% !important;
+        width: 70%;
+    }
+    .calender,
+    .calender_timing {
+        width: 100%;
+        position: relative;
+        left: -0%;
+    }
+}
+
+@media only screen and (max-width: 919px) {
+    .bike-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bike-showcase {
+        width: 75%;
+    }
+    .loginPop {
+        right: 3% !important;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 919px) {
+    .bike-showcase {
+        width: 73%;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .bike-showcase,
+    .filter-bar {
+        clear: both;
+        width: 95%;
+        margin-left: 1%;
+    }
+    .filter-bar {
+        height: 40rem;
+    }
+    nav>ul>li {
+        display: none;
+    }
+    nav>ul>.logo_li {
+        display: block;
+    }
+    nav .logo_li img {
+        width: 7rem;
+    }
+    nav {
+        height: 10rem;
+    }
+    nav ul {
+        display: block !important;
+        position: relative;
+        width: 95vw !important;
+    }
+    .hamburgerMenu {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .filter-bar {
+        height: 4rem;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .filter-heading {
+        cursor: pointer;
+    }
+    .filter-bar.showFilter {
+        height: 42rem;
+        transition: 0.5s;
+    }
+    .filter-heading::before {
+        content: "\25be";
+        transform: scale(1.4);
+    }
+    .selectCity .searchArea,
+    .cityArea {
+        clear: both;
+        width: 100% !important;
+    }
+    .selectCity .cityArea {
+        height: auto;
+    }
+    .selectCity .searchArea {
+        height: 50%;
+    }
+}
+
+@media only screen and (max-width: 509px) {
+    .rideNow {
+        width: 90%;
+    }
+    .bike-showcase {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    .bike-showcase>div:hover {
+        transform: scale(1);
+    }
+    .rideNow {
+        grid-template-columns: repeat(1, 1fr);
+        height: 25rem;
+    }
+}
