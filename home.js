@@ -897,7 +897,7 @@ function checkStartAndEndDateCont() {
       planName: `${choose_plan}`,
     };
     localStorage.setItem("rideNowDetails", JSON.stringify(rideNowDetails));
-    window.location.href = "./HTML_FILE/ride_booking.html";
+    window.location.href = "ride_booking.html";
   }
 }
 
