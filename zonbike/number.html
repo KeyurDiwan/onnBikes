@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+        #outer{
+            max-width: 1800px;
+            margin: auto;
+            
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar_1">
+
+    </div>
+ 
+    <p>number</p>
+
+</body>
+
+</html>
+<script type="module">
+
+    
+    import navbar from "./compo/navbar.js" 
+    var nav = document.getElementById("navbar_1");
+
+    nav.innerHTML = navbar()
+    
+</script>
