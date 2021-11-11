@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Support:simplifying Mobility</title>
+<style>
+    .head {
+        width: 100%;
+        height: 120px;
+        border-bottom: 1px solid gainsboro;
+    }
+    
+    #simplifying {
+        font-size: 25px;
+        color: grey;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+    
+    #welcome {
+        font-size: 15px;
+        color: grey;
+        margin-left: 80%;
+        margin-top: -10%;
+    }
+    
+    #login {
+        width: 100px;
+        height: 40px;
+        background-color: #02b875;
+        color: white;
+        text-decoration: none;
+        color: white;
+        margin-left: -5%;
+    }
+    
+    #signup {
+        width: 100px;
+        height: 40px;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .nav {
+        width: 100%;
+        height: 40px;
+        border-bottom: 0.3px solid gainsboro;
+        margin-top: 0.5%;
+    }
+    
+    #home {
+        border: none;
+        margin-left: 10%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+        margin-top: 0.5%;
+    }
+    
+    #solutions {
+        border: none;
+        margin-left: 4%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+    }
+    
+    .main {
+        background-color: whitesmoke;
+        border-bottom: 0.5px solid gray;
+        height: 180px;
+    }
+    
+    #form {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    
+    #search {
+        width: 500px;
+        height: 30px;
+    }
+    
+    #submit {
+        width: 70px;
+        height: 30px;
+    }
+    
+    #box {
+        width: 20px;
+        height: 20px;
+        border: 1px solid grey;
+        margin-left: 10px;
+        background-color: grey;
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    
+    #ticket {
+        margin-left: 40px;
+    }
+    
+    #box2 {
+        width: 20px;
+        height: 20px;
+        border: 1px solid grey;
+        margin-left: 50px;
+        background-color: grey;
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    
+    #ticket2 {
+        margin-left: 80px;
+    }
+    
+    .main {
+        margin-left: 150px;
+        background-color: whitesmoke;
+    }
+    
+    .main1 {
+        width: 800px;
+        height: 900px;
+        border: 1px solid grey;
+        background-color: white;
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+    
+    .submain1 {
+        background-color: white;
+        margin-left: 20px;
+    }
+    
+    .submain11 {
+        border-bottom: 1px solid green;
+        margin-bottom: 10px;
+        background-color: white;
+    }
+    
+    #b {
+        margin-left: 400px;
+        margin-top: -158px;
+    }
+    
+    #d {
+        margin-left: 400px;
+        margin-top: -158px;
+    }
+    
+    #f {
+        margin-left: 400px;
+        margin-top: -158px;
+    }
+    
+    #h {
+        margin-left: 400px;
+        margin-top: -158px;
+    }
+    
+    .nikhil {
+        background-color: whitesmoke;
+        border: 1px solid #ffffff;
+    }
+    
+    li a {
+        text-decoration: none;
+        color: #85939e;
+    }
+    
+    h3 {
+        color: #284053;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <label id="simplifying">Simplifying Mobility </label>
+        <label id="welcome">Welcome</label>
+
+        <button id="login" onclick="login()">
+        <b
+          ><a href="login.html" style="text-decoration: none; color: white">
+            LOGIN
+          </a></b
+        >
+      </button>
+        <button id="signup" onclick="signup()">
+        <b
+          ><a
+            href="signup.html"
+            style="text-decoration: none; background-color: white; color: black"
+          >
+            SIGN UP
+          </a></b
+        >
+      </button>
+    </div>
+
+    <div class="nav">
+        <button onclick="home" id="home"><b>Home</b></button>
+        <button onclick="solutions" id="solutions">Solutions</button>
+    </div>
+
+    <div class="nikhil">
+        <div class="main">
+            <h1 style="color: #284053; font-size: 30px">
+                How can we help you today?
+            </h1>
+            <form id="form">
+                <input type="text" placeholder="Enter Search intem here .." name="search" id="search" />
+                <button type="submit" id="submit">search</button>
+            </form>
+            <label id="box"><b>+</b></label>
+            <label id="ticket">New Support Ticket</label>
+
+            <label id="box2"><b>-\-</b></label>
+            <label id="ticket2">Check Ticket Status</label>
+        </div>
+
+        <div class="main1">
+            <div class="submain1">
+                <div class="submain11">
+                    <h1>Knowledge base</h1>
+                    <label style="font-size: 20px; color: grey">FAQs</label>
+                </div>
+
+                <div id="a">
+                    <h3>Learn about ONN (5)</h3>
+                    <ul>
+                        <li><a href="#"> what is Onn bike</a></li>
+                        <li><a href="#">what are the benefits of using Onn</a></li>
+                        <li><a href="#">what are the bike options available?</a></li>
+                        <li><a href="#">where is Onn currently operation</a></li>
+                        <li><a href="#">our Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="b">
+                    <h3>Getting started (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="c">
+                    <h3>plan and promotion (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="d">
+                    <h3>Booking your ride (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="e">
+                    <h3>Payment,cancellation and refund.. (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="f">
+                    <h3>Security(5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <div id="g">
+                    <h3>Covid-19 safety (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+                <div id="h">
+                    <h3>explore all the FAQs (5)</h3>
+                    <ul>
+                        <li><a href="#">how do i register with Onn</a></li>
+                        <li><a href="#">what are the document required?</a></li>
+                        <li>
+                            <a href="#">i am having trouble register in platform..</a>
+                        </li>
+                        <li><a href="#">i dont have drive licens</a></li>
+                        <li><a href="#">your Usage policy</a></li>
+                    </ul>
+                </div>
+
+                <button style="color: gray; font-size: 25px0">Offerings</button>
+                <div id="xxx" style="border-bottom: 1px solid green"></div>
+
+                <div id="i">
+                    <h3>
+                        Rent-To-Own(R2O)<label style="color: gray; font-size: 10px">(16)</label
+              >
+            </h3>
+
+            <ul>
+              <li><a href="#">how do i register with Onn</a></li>
+              <li><a href="#">what are the document required?</a></li>
+              <li>
+                <a href="#">i am having trouble register in platform..</a>
+              </li>
+              <li><a href="#">i dont have drive licens</a></li>
+              <li><a href="#">your Usage policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
