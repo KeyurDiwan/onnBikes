@@ -579,7 +579,7 @@ function decidedlocation(e) {
     finallocation.push(decidedlocation, decidedlocation.address);
 
     localStorage.setItem("finalBookedBike", JSON.stringify(finallocation));
-    window.open("../HTML_FILE/checkout.html", "_parent");
+    window.open("checkout.html", "_parent");
 }
 
 function manufacturer() {
