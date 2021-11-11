@@ -1,0 +1,27 @@
+#popup {
+    margin: 70px auto;
+    border-radius: 5px;
+    width: 65%;
+    height: 430px;
+    position: relative;
+    top: 100px;
+}
+
+#popup img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#popup #close {
+    position: absolute;
+    transition: all 200ms;
+    font-size: 40px;
+    right: -20px;
+    border-style: none;
+    top: -26px;
+    background-color: white;
+    height: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+}
