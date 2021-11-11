@@ -64,7 +64,7 @@ function paymentAccept(para) {
   let upi_address = document.getElementById(para).value;
   if (validateMail(upi_address)) {
     localStorage.setItem("paymentDone", "DONE");
-    window.location.href = "./Project Folder/project_oonbikes/home.html";
+    window.location.href = "home.html";
   } else {
     alert("Please give correct upi address");
   }

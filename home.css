@@ -848,11 +848,13 @@ footer > .footer_upperPart + hr {
 
 .covid_div > .covid_div_remove {
   top: -16%;
+  background-color: black;
   right: -8%;
 }
 
 .newYear_div > .newYear_div_remove {
   top: -12%;
+  background-color: black;
   right: -3%;
 }
 
