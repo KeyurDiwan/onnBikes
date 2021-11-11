@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent a Bike or Scooty with Zero Deposit at $8/Hour-ONN Bikes</title>
+    <!-- <link rel="preconnect" href="/tserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="checkout.css" />
+</head>
+
+<body>
+    <!-- nav start -->
+    <header class="header_div" id="header_div">
+        <div>
+            <nav class="navigation_bar">
+                <ul class="spacing_in_line">
+                    <li>
+                        <a href="home.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="rentTOown.html">RENT TO OWN</a>
+                    </li>
+                    <li>
+                        <a href="faq1.html">FAQ</a>
+                    </li>
+                    <li class="logo_list">
+                        <a href="#">
+                            <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt="" srcset="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="offers.html">OFFERS</a>
+                    </li>
+                    <li style="position: relative">
+                        <a href="#header_div" onclick="showLoginSignupPopup()" class="signupNav">
+                LOGIN/SIGNUP</a
+              >
+              <a href="#" onclick="showWelcomeContent()" class="welcomeNav hide"
+                >WELCOME <span class="fa fa-caret-down"></span
+              ></a>
+                        <div class="welcome-hide_content">
+                            <p onclick="showMyAccount()">
+                                <i class="fa fa-user"></i> MY ACCOUNT
+                            </p>
+                            <p onclick="logoutUser()">
+                                <i class="fas fa-sign-out-alt"></i> LOGOUT
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="tel:+918378007800">+918378007800</a>
+                    </li>
+                    <div class="hamburgerMenu" onclick="showMobileNavBar()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mobileNavBar">
+                        <ul>
+                            <li>
+                                <a href="#move_to_whyOnn">WHY ONN?</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="move_to_FleetAndPricing()">FLEET AND PRICING</a
+                  >
+                </li>
+                <li>
+                  <a href="safety.html">SAFETY</a>
+                            </li>
+                            <li>
+                                <a href="faq1.html">FAQ</a>
+                            </li>
+
+                            <li style="position: relative">
+                                <a href="#header_div" onclick="showLoginSignupPopup()" class="signupNav">
+                    LOGIN/SIGNUP</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#"> +918378007800</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- nav end -->
+    
+    <div class="safety">
+        <div class="safety-banner"></div>
+
+        <div id="checkout-main-cont">
+            <div id="bike-data">
+                <div id="bike-img">
+                    <p id="company_name"></p>
+                    <p id="model-name"></p>
+                    <div id="bike-pic"></div>
+                    <p id="abc1">PICKUP & RETURN LOCATION</p>
+                    <a id="abc2"></a>
+                </div>
+
+                <div id="extra-info">
+                    <div id="extra-info-p">
+                        <p>Late return first two hours of delay ₹ 200</p>
+                        <p>₹ 18 per hour after first two hours of delay</p>
+                    </div>
+
+                    <div id="extra-info-extra">
+                        <p id="tachometer"></p>
+                        <p>100 km/hour</p>
+                        <p id="roadSolid"></p>
+                        <p id="freeKm"></p>
+                        <p id="coinSolid"></p>
+                        <p id="excess"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="paisa">
+                <div id="start-end">
+                    <div id="start">
+                        <p style="font-weight: bolder">START TRIP</p>
+
+                        <div>
+                            <div id="mnth">
+                                <p id="month_day"></p>
+                                <p id="monthYear"></p>
+                            </div>
+
+                            <div id="weekly">
+                                <p id="day"></p>
+                                <p id="timehrs"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="end">
+                        <p>END TRIP</p>
+
+                        <div>
+                            <div id="mnth1">
+                                <p id="month_day1"></p>
+                                <p id="monthYear1"></p>
+                            </div>
+
+                            <div id="weekly1">
+                                <p id="day1"></p>
+                                <p id="timehrs1"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="refund-dep">
+                    <div></div>
+                    <div id="alpha">
+                        <p>Refundable Deposit</p>
+                        <p>This amount has to be paid at the time of vehicle delivery</p>
+                    </div>
+                    <div>
+                        <p>₹0</p>
+                    </div>
+                </div>
+
+                <div id="bill-space">
+                    <p>PRICING</p>
+                    <div id="jug">
+                        <p>Tariff (Inclusive of all taxes)</p>
+                        <p id="price_without_discount">₹ 0</p>
+                    </div>
+
+                    <div id="jug1">
+                        <div></div>
+
+                        <input type="text" id="inp" placeholder="PROMO CODE" />
+
+                        <label id="redlabel">
+                <div id="tick">
+                  <img
+                    src="IMG_FILE/checked.png"
+                    alt=""
+                    id="promocodetick"
+                  />
+                </div>
+              </label>
+
+                        <div id="promo-code-price">
+                            <p id="promo-code-price1"></p>
+                        </div>
+                    </div>
+
+                    <div id="jug2">
+                        <div id="insureTheRide-btn"></div>
+                        <div id="beta">
+                            <p>Insure my ride</p>
+                            <p>Covers the rider, pillion and the vehicle T&C</p>
+                        </div>
+                        <div>
+                            <p id="insureTheRide_price">₹0</p>
+                        </div>
+                    </div>
+
+                    <div id="total-pricing">
+                        <p>Total Amount</p>
+                        <p id="totalAmounttFinalPrice">₹848</p>
+                    </div>
+
+                    <div id="bhaukal">
+                        <div>
+                            <div class="dummy1" id="haebo1">
+                                <img src="IMG_FILE/remove.png" alt="rmv" />
+                            </div>
+
+                            <p>Excludes fuel</p>
+                        </div>
+
+                        <div>
+                            <div class="dummy1" id="haebo">
+                                <img src="IMG_FILE/righttick.svg" alt="tick" />
+                            </div>
+
+                            <p>Includes all taxes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tANDc">
+                    <div>
+                        <div id="sliding-tick">
+                            <label class="switch">
+                  <input id="checkbox" type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+                        </div>
+                        <p id="tc">I agree to the terms of use</p>
+                    </div>
+
+                    <button id="payment-total" onclick="showPaymentPage()">
+              PAYMENT
+            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <i>
+        <small>
+          <b>
+            " As per the District Collectors' order, commercial two-wheelers are
+            not allowed to enter Kerala and Ooty district." For more, read
+            T&amp;C's"</b
+          ></small
+        ><b> </b
+      ></i>
+    </div>
+</body>
+
+</html>
+
+<script src="checkout.js"></script>
