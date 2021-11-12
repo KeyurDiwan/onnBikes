@@ -848,13 +848,26 @@ footer > .footer_upperPart + hr {
 
 .covid_div > .covid_div_remove {
   top: -16%;
-  background-color: black;
+  /* background-image: url("IMG_FILE/waveicon.PNG"); */
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  margin: 3px;
+  font-size: 15px;
+
+  border-radius: 50%;
   right: -8%;
 }
 
 .newYear_div > .newYear_div_remove {
   top: -12%;
-  background-color: black;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  margin: 3px;
+  font-size: 15px;
+
+  border-radius: 50%;
   right: -3%;
 }
 
@@ -866,6 +879,13 @@ footer > .footer_upperPart + hr {
 .paymentDoneRemove {
   width: 3.3rem;
   height: 3.3rem;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  margin: 3px;
+  font-size: 15px;
+
   background-position: -7466px 0;
   background-image: url(../IMG_FILE/completeImg.png);
   position: absolute;
