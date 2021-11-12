@@ -1,0 +1,389 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "IBM Plex Sans Condensed", Helvetica, Arial, Lucida, sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "IBM Plex Sans Condensed", Helvetica, Arial, Lucida, sans-serif;
+  }
+  
+  #upperHomeDiv {
+    text-align: center;
+  }
+  
+  .bigRentToOwn {
+    font-size: 4rem;
+    position: relative;
+    top: 20px;
+  }
+  
+  .bigRentToOwn h1 {
+    color: #eb7f23;
+  }
+  
+  .upperHomePic img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    bottom: 60px;
+  }
+  
+  .upperhomeicon {
+    display: flex;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .upperhomeicon div {
+    width: 25%;
+  }
+  
+  .uppericonbox {
+    display: flex;
+    margin-left: 30px;
+  }
+  
+  .uppericonbox > span:nth-child(2) {
+    width: 48%;
+    padding: 13px 5px;
+    font-weight: 700;
+  }
+  
+  .uppermidh1 {
+    padding: 20px;
+    text-align: center;
+    line-height: 50px;
+  }
+  
+  #uppermidbox {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    padding-top: 35px;
+    background-color: #ee7813;
+    height: 210px;
+  }
+  
+  .uppermidbox1 {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .uppermidbox2 {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .upperInputbox {
+    width: 33%;
+    border-radius: 15px;
+  }
+  
+  .upperInputbox input {
+    border: 2px solid rgb(41, 41, 41);
+    width: 88%;
+    height: 45px;
+    font-size: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .upperInputbox select {
+    border: 2px solid rgb(41, 41, 41);
+    width: 88%;
+    height: 45px;
+    font-size: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: rgb(100, 100, 100);
+  }
+  
+  .upperInputboxbtn input {
+    width: 89%;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    height: 50px;
+    position: relative;
+    bottom: 3px;
+  }
+  
+  .whyonnChoose {
+    text-align: center;
+    max-width: 55%;
+    margin: auto;
+    margin-top: 80px;
+  }
+  
+  .whyonnChoose p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8em;
+  }
+  
+  .whyonnChoose h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    color: #000000;
+    line-height: 1.5em;
+    text-align: center;
+  }
+  
+  .whyonnChoose2main {
+    max-width: 85%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  
+  .whyonnChoose2mainbox {
+    display: flex;
+    text-align: center;
+  }
+  
+  .whychose2ndSubBox {
+    padding: 20px;
+  }
+  
+  .whychose2ndSubBox img {
+    width: 20%;
+    padding: 5px;
+  }
+  
+  .whychose2ndSubBox h3 {
+    padding: 10px;
+    font-size: 19px;
+  }
+  
+  .whychose2ndSubBox p {
+    padding: 10px;
+    line-height: 25px;
+    max-width: 70%;
+    font-size: 15px;
+    margin: auto;
+  }
+  
+  /* .backgroundWhyChoose{
+    background-color: rgb(245, 243, 243);
+  } */
+  
+  .ChooseAny {
+    text-align: center;
+    margin: 70px 0px;
+  }
+  
+  .ChooseAny h2 {
+    font-size: 2.7rem;
+    padding: 20px;
+    line-height: 50px;
+  }
+  
+  .ChooseAny p {
+    max-width: 60%;
+    margin: auto;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .filtersDiv p {
+    text-align: center;
+    letter-spacing: 7px;
+    padding: 40px;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .allFiltersbox1 {
+    display: flex;
+    max-width: 83%;
+    margin: auto;
+  }
+  
+  .allFiltersbox1 div {
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(158, 158, 158);
+    width: 11%;
+    margin: 5px;
+    height: 40px;
+    border: 1px solid #f07910;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  .allFiltersbox1 div:hover{
+    background-color: #eb7f23;
+    color: white;
+  }
+  
+  .allFiltersbox2 {
+    display: flex;
+    max-width: 30%;
+    margin: auto;
+  }
+  
+  .allFiltersbox2 div {
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(158, 158, 158);
+    width: 30%;
+    margin: 5px;
+    height: 40px;
+    border: 1px solid #f0760c;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  .allFiltersbox2 div:hover{
+    background-color: #eb7f23;
+    color: white;
+  }
+  
+  #filterbikes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    max-width: 82%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  
+  #filterbikesbox {
+    border-radius: 4px;
+    box-shadow: 0 1px 10px 1px rgb(0 0 0 / 14%);
+    cursor: pointer;
+  }
+  
+  #filterbikesbox hr{
+    width: 100%;
+    color: #e4e4e4;
+  }
+  
+  #filterbikes img {
+    width: 100%;
+  }
+  
+  #priceFilterBox {
+    display: flex;
+  }
+  
+  #priceFilterBox div {
+    margin: auto;
+  }
+  
+  #for12Filter {
+    padding: 13px;
+  }
+  
+  #for12Filter > div:nth-child(1) {
+    font-weight: 700;
+    line-height: 25px;
+    color: #eb7f23;
+    font-size: 18px;
+  }
+  
+  #for12Filter > div:nth-child(2) {
+    font-size: 13px;
+  }
+  
+  #bikenameFilter > div:nth-child(1) {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  #bikenameFilter > div:nth-child(2) {
+    font-weight: bolder;
+    color: #eb7f23;
+    font-size: 22px;
+    margin-top: 15px;
+  }
+  
+  
+  .DeliveringDiv{
+    margin: auto;
+    max-width: 60%;
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 70px;
+  }
+  
+  .DeliveringDiv h1{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .DeliveringDiv p{
+   font-weight: 600;
+   width: 85%;
+   color: rgb(27, 27, 27);
+   margin: auto;
+   font-size: 18px;
+   letter-spacing: 1px;
+   line-height: 30px;
+  }
+  
+  .Delivering2ndBox{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    max-width: 80%;
+    margin: auto;
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .Delivering2ndBox img{
+    width: 60%;
+  }
+  
+  .Delivering2ndBox h3{
+    padding: 10px;
+    letter-spacing: 1px;
+    line-height: 30px;
+  }
+  
+  .Delivering2ndBox p{
+    line-height: 25px;
+    color: #464545;
+  }
+  
+  .footerBlack{
+    background-color: black;
+    color: white;
+  }
+  
+  .footerBlackHead h1{
+    font-size: 2.5rem;
+    max-width: 50%;
+    padding-top: 80px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .footerBlackHead p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .footerBlackImg img{
+    width: 100%;
+  }

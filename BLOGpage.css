@@ -1,0 +1,181 @@
+* {
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.53;
+    background: #e6ddd8;
+  }
+  
+  #container {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  #container::after {
+    height: 700px;
+    content: "";
+    background: url(https://blog.onnbikes.com/wp-content/uploads/2018/07/onnbikes-blog.jpg);
+    background-size: cover;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .header {
+    padding-top: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .header div {
+    width: 33%;
+    text-align: center;
+  }
+  
+  .menubar {
+    width: 50px;
+    height: 20px;
+    padding: 10px;
+  }
+  
+  .menubar span {
+    background-color: #fa8109;
+    width: 250px;
+    padding: 15px;
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-right: 100px;
+  }
+  
+  .logodiv img {
+    text-align: center;
+    position: relative;
+    bottom: 27px;
+    width: 35%;
+  }
+  
+  .search img {
+    margin-left: 100px;
+    height: 65px;
+    width: 65px;
+    text-align: right;
+    align-items: center;
+    position: relative;
+    bottom: 5px;
+    border-radius: 50%;
+  }
+  
+  .boxdiv {
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .threebox {
+    display: flex;
+  }
+  
+  .threebox > div {
+    margin: 1.5%;
+    width: 31%;
+    transition: width 1s;
+  }
+  .threebox > div:hover {
+    width: 33%;
+    height: fit-content;
+  }
+  .blogdivbox {
+    background: white;
+  }
+  
+  .blogdivbox img {
+    width: 100%;
+  }
+  .paddingdiv {
+    padding: 10px 15px;
+  }
+  .paddingdiv > span:nth-child(1) {
+    cursor: pointer;
+    font-weight: 600;
+    color: #fa8109;
+    position: relative;
+    top: 7px;
+  }
+  .paddingdiv > span:nth-child(2) img {
+    cursor: pointer;
+    width: 8%;
+    margin: 5px;
+    float: right;
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px solid #fa8109;
+  }
+  .paddingdiv > span:nth-child(3) img {
+    padding: 2px;
+    border: 1px solid #fa8109;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+    width: 8%;
+    margin: 5px;
+  }
+  .paddingdiv > h3 {
+    line-height: 20px;
+    clear: both;
+    padding: 15px 0;
+  }
+  .paddingdiv > p {
+    padding-bottom: 15px;
+    font-size: 15px;
+    color: rgb(121, 121, 121);
+  }
+  .commentdiv span {
+    font-size: 15px;
+    font-family: none;
+    margin-right: 8px;
+    color: rgb(167, 167, 167);
+  }
+  hr {
+    margin-bottom: 10px;
+  }
+  
+  .lodemore {
+    text-align: center;
+    background-color: #5adaa3;
+    max-width: 20%;
+    margin: auto;
+    border-radius: 20px;
+  }
+  
+  .lodemore p {
+    margin: 50px 0px;
+    font-weight: 600;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+  }
+  
+  .Copyrights {
+    margin: 50px 0;
+    text-align: center;
+    color: rgb(148, 148, 148);
+  }
+  
+  .logoimgdiv {
+    cursor: pointer;
+    margin-left: 80px;
+  }
+  
+  
+  

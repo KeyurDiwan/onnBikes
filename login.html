@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="em">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>login </title>
+<style>
+    .head {
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid gainsboro;
+        ;
+    }
+
+    #simplifying {
+        font-size: 25px;
+        color: grey;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+
+    #welcome {
+        font-size: 15px;
+        color: grey;
+        margin-left: 80%;
+        margin-top: -10%;
+
+
+
+    }
+
+    #login {
+        width: 100px;
+        height: 40px;
+        background-color: #02b875;
+
+
+        color: white;
+    }
+
+    #signup {
+
+        width: 100px;
+        height: 40px;
+        background-color: white;
+
+        color: black;
+    }
+
+    .nav {
+        width: 100%;
+        height: 40px;
+        border-bottom: 0.3px solid gainsboro;
+        ;
+        margin-top: 0.5%
+    }
+
+    #home {
+        border: none;
+        margin-left: 10%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+        margin-top: 0.5%
+    }
+
+    #solutions {
+        border: none;
+        margin-left: 4%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+
+
+    }
+
+    .login {
+        width: 1200px;
+        height: 450px;
+        border: 0.5px solid gainsboro;
+        margin-left: 15%;
+        background-color: none;
+        margin-top: 20px;
+        border-bottom: 0.5px solid red;
+    }
+
+    #name {
+        width: 450px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 40px;
+        margin-left: 40px;
+
+    }
+
+    #password {
+        width: 450px;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-left: 40px;
+
+    }
+
+    #checkbox {
+        width: 20px;
+        height: 20px;
+        margin-top: 20px;
+        margin-left: 40px;
+
+
+    }
+
+    #forgot {
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+
+    #login1 {
+        width: 100px;
+        height: 40px;
+        border: 1px solid black;
+        background-color: #02b875;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+
+    .column {
+        border-bottom: 0.5px solid red;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .row {
+        display: flex;
+        margin-left: 220px;
+        margin-top: 30px;
+
+    }
+
+    .left {
+        background-color: white;
+        width: 800px;
+        height: 450px;
+        border-bottom: 2px solid gainsboro;
+        border: 1px solid whitesmoke;
+
+    }
+
+    .right {
+        background-color: rgb(233, 221, 221);
+        width: 400px;
+        height: 450px;
+    }
+
+</style>
+
+<body>
+    <div class="head">
+
+
+        <label id="simplifying">Simplifying Mobility </label>
+        <label id="welcome">Welcome</label>
+
+
+        <button id="login" onclick="login()"><b>LOGIN</b></button>
+        <button id="signup" onclick="signup()"><b>SIGN UP</b></button>
+
+
+    </div>
+
+    <div class="nav">
+        <button onclick="home" id="home"><b>Home</b></button>
+        <button onclick="solutions" id="solutions">Solutions</button>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="left">
+                <h3 style="margin-left: 50px; font-size: 25px; ">Login to the support portal</h3>
+                <label style="margin-left: 50px; margin-top: 10px;">Enter the detais below</label>
+                <br>
+
+                <input type="text" name="name" id="name" placeholder="Your email address">
+                <input type="password" name="password" id="password" placeholder="Your password">
+                <br>
+                <input type="checkbox" id="checkbox">
+
+                <labe>Remember me on this computer</labe>
+                <br>
+                <br>
+
+                <label id="forgot"> Forgot My password</label>
+                <br>
+
+                <button onclick="login1()" id="login1"> Login</button>
+
+            </div>
+            <img src="https://i.pinimg.com/originals/2a/24/28/2a2428415a8c8e8cbeac6025965d7b20.png" width="40px"
+                height="25px" border-radius="30px" margin-top="10px">
+            <h1 style="margin-left: 50px; margin-top: -30px;"><b>Are you an agent?<span
+                        style="font-size: 25px; color: green;"> login here</span></b></h1>
+
+        </div>
+
+
+
+        <div class="col2">
+            <div class="right">
+
+                <h1 style="margin-left: 100px; ">Sign Up</h1>
+
+                <button
+                    style="width: 200px;
+                                    height: 35px; text-align: center; background-color: rgb(233, 221, 221); margin-left: 100px;">
+                    SIGN UP WITH US </button>
+
+                <p style="margin-left: 70px;"> once you sign up, you will have complete<br>
+                    access to our self service portal and you can<br>
+                    use your computer to rise ticket<br>
+                    and track their status
+                </p>
+
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

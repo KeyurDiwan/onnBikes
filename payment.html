@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Bike or Scooty with Zero Deposit at $8/Hour-ONN Bikes</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="subbox1">
+            <h3 class="payment-header">Payment Options</h3>
+            <div>
+                <a>
+                    <div class="row wise payment-method-tabs">
+                        <div class="pimage">
+                            <img src="IMG_FILE/ic_cc_avenue.png" alt="">
+                        </div>
+                        <div class="column wise">
+                            <div>Pay Using CC Avenue</div>
+                            <div class="pay-cc-subtitle"> Pay via Credit & Debit card , Net Banking , UPI , etc </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a>
+                    <div class="row wise payment-method-tabs">
+                        <div class="pimage">
+                            <img src="IMG_FILE/PAYTM.png" alt="">
+                        </div>
+                        <div class="wise">
+                            <span class="color-phone-pe">Paytm</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a>
+                    <div class="row wise payment-method-tabs">
+                        <div class="pimage">
+                            <img src="IMG_FILE/PHONEPE.png" alt="">
+                        </div>
+                        <div class="wise">
+                            <span class="color-phone-pe">PhonePe/BHIM UPI</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a>
+                    <div class="row wise payment-method-tabs">
+                        <div class="pimage">
+                            <img src="IMG_FILE/upi.svg" alt="">
+                        </div>
+                        <form onsubmit="return false" style="width: 60%;" id="upi">
+                            <div class="wise">
+                                <input type="email" name="email" class="upi-input" id="input_upi" placeholder="Enter UPI address">
+                                <div class="pay-cc-subtitle text-align-right-xs" style="margin-top: 7px;display: flex;align-items: center;"> <span>Powered by
+                            DBS</span> <span> <img src="IMG_FILE/dbslogo.png" height="21" width="21" alt="" style="margin-top: -2px;margin-left: 3px;">
+                        </span>
+                                </div>
+                            </div>
+                        </form>
+                        <button class="btn go-btn" onclick="paymentAccept('input_upi')">Go</button>
+
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a>
+                    <div class="row wise payment-method-tabs">
+                        <div class="pimage">
+                            <img src="IMG_FILE/MOBIKWIK.png" alt="">
+                        </div>
+                        <div class="wise">
+                            <span class="color-phone-pe">MobiKwik</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="subbox2">
+            <h3 style="margin-bottom: 30px;" class="payment-header">
+                Booking Details
+            </h3>
+
+
+            <div style="cursor: auto;" class="payment-method-tabs">
+                <div class="row1 wise payment-method-tabs2">
+                    <div class="column">
+                        <h5 id="bikemanufacturer" class="bike-company-name text-uppercase pull-left bike-detail-tab width-tab">Honda</h5>
+                        <h4 id="bikemodel" class="bike-modal-name text-uppercase pull-left width-tab">Navi</h4>
+                    </div>
+                    <div>
+                        <h4 class="bike-modal-name text-uppercase width-tab bike-detail-tab"><span style="font-size: 13px;">₹</span><span id="changeprice">2918</span></h4>
+                    </div>
+                </div>
+                <div style="justify-content: space-around;" class="row1 wise payment-method-tabs2">
+                    <div style="align-items: center;" class="column">
+                        <div class="date-heading">START TRIP</div>
+                        <div class="row1">
+                            <div class="btm-payment-start-trip row1">
+                                <div style="align-items: center;" class="payment-cal-date-mth column">
+                                    <span id="startdate" class="payment-cal-date">29</span>
+                                    <span id="startmonth" class="payment-calender-mth"> Jul 21</span>
+                                </div>
+                                <div style="align-items: center;" class="payment-cal-day-time column">
+                                    <span id="startweekday" class="payment-cal-day date-payment">Thursday</span>
+                                    <span id="starttime" style="font-size: 10px;" class="payment-calender-time date-payment">01:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="align-items: center;" class="column">
+                        <div class="date-heading">END TRIP</div>
+                        <div class="row1">
+                            <div class="btm-payment-start-trip row1">
+                                <div style="align-items: center;" class="payment-cal-date-mth column">
+                                    <span id="enddate" class="payment-cal-date">30</span>
+                                    <span id="endmonth" class="payment-calender-mth"> Jul 21</span>
+                                </div>
+                                <div style="align-items: center;" class="payment-cal-day-time column">
+                                    <span id="endweekday" class="payment-cal-day date-payment">Friday</span>
+                                    <span id="endtime" style="font-size: 10px;" class="payment-calender-time date-payment">02:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wise payment-method-tabs2">
+                    <h3 style="text-align: left;font-weight: 600;">PICKUP & RETURN LOCATION</h3>
+                </div>
+                <div style="background-color: rgb(241,241,241);" class="wise payment-method-tabs2">
+                    <div class="paymentbreakdown">
+                        Payment Breakdown
+                    </div>
+                </div>
+                <div class="row1 wise payment-method-tabs2">
+                    <div class="column">
+                        <span class="weight">Tariff</span>
+                        <p class="confirm-subheading-text">Inclusive of all taxes</p>
+                    </div>
+                    <span class="weight">₹<span id="tariff"></span></span>
+                </div>
+                <div style="background-color: rgb(241,241,241);" class=" row1 wise payment-method-tabs2">
+                    <div class="paymentbreakdown">
+                        Payable Amount
+                    </div>
+                    <span style="font-size: 17px;" class="weight">₹<span id="changeprice"></span></span>
+                </div>
+                <div style="box-shadow: none;" class="wise payment-method-tabs2">
+                    <p style="margin-bottom: -5px;margin-top: -9px;font-weight: 400;">Other Details</p>
+                </div>
+                <div style="box-shadow: 0px 0px 3px rgb(31 31 31 / 20%);" class="column">
+                    <div style="box-shadow: none;" class="row1 wise payment-method-tabs3">
+                        <div class="column">
+                            <span class="weight">Kilometers Eligible
+                        </span>
+                            <p class="confirm-subheading-text">The number of kms you can ride at no extra charge</p>
+                        </div>
+                        <span class="weight"><span id="kilometer">3281</span> Km</span>
+                    </div>
+                    <div style="box-shadow: none;" class="row1 wise payment-method-tabs3">
+                        <div class="column">
+                            <span class="weight">Excess Kms Fare</span>
+                            <p class="confirm-subheading-text">You can ride the eligible km for free excluding fuel</p>
+                        </div>
+                        <span class="weight">₹<span id="excess">2</span>/km</span>
+                    </div>
+                    <div style="box-shadow: none;" class="row1 wise payment-method-tabs3">
+                        <div class="column">
+                            <span class="weight">Speed Limit</span>
+                            <p class="confirm-subheading-text">
+                                Penalty applicable in case of violation</p>
+                        </div>
+                        <span class="weight">75 km/hr</span>
+                    </div>
+                    <div style="box-shadow: none;" class="row1 wise payment-method-tabs3">
+                        <div class="column">
+                            <span class="weight">Late Return(First two hours of delay)</span>
+                            <p class="confirm-subheading-text">₹6/hour after two hours of delay</p>
+                        </div>
+                        <span class="weight">₹100</span>
+                    </div>
+                    <div style="box-shadow: none;display: flex;align-items: center;" class="row1 wise payment-method-tabs3">
+                        <div class="row1">
+                            <a href="#"><img style="vertical-align: middle;" src="IMG_FILE/cancel.svg" alt=""></a>
+                            <p style="margin: 0;margin-top: 3px;margin-left: 5px;font-size: 12px;">Excludes fuel</p>
+                        </div>
+                        <div class="row1">
+                            <a href="#"><img style="vertical-align: middle;" src="IMG_FILE/righttick.svg" alt=""></a>
+                            <p style="margin: 0;margin-top: 2px;margin-left: 4px;font-size: 12px;">Includes all taxes</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+</body>
+
+</html>
+<script src="payment.js"></script>
