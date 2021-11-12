@@ -126,6 +126,9 @@ header nav ul li a img {
     display: flex;
     justify-content: center;
     align-items: center;
+
+   
+
     background-color: rgba(0, 0, 0, 0.616);
     z-index: 5;
     overflow: auto;
@@ -1251,6 +1254,16 @@ header nav ul li a img {
     align-items: center;
     font-size: 1.4rem;
     padding: 0 5%;
+}
+
+.selctPickupRemove{
+    background-color: white;
+    text-align: center;
+    padding: 5px;
+    margin: 3px;
+    font-size: 15px;
+  
+    border-radius: 50%;
 }
 
 @media only screen and (max-width: 1285px) {
