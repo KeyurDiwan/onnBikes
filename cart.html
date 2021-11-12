@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart</title>
+    <link rel="icon" href="https://www.onnbikes.com/img/favicon32.png" />
+    <link rel="stylesheet" href="./cart.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="flex-box-space-btw">
+                <li>
+                    <a href="home.html">HOME</a>
+                </li>
+                <li>
+                    <a href="offers.html">OFFERS</a>
+                </li>
+                <li>
+                    <a href="../HTML_FILE/rentTOown.html">RENT TO OWN</a>
+                </li>
+                <li class="logo_li">
+                    <a href="#">
+                        <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt="" srcset="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML_FILE/faq1.html">FAQ</a>
+                </li>
+                <li style="position: relative">
+                    <a href="../HTML_FILE/home.html" class="signupNav"> LOGIN/SIGNUP</a>
+                    <a href="#" onclick="showWelcomeContent()" class="welcomeNav hide">WELCOME <span class="fa fa-caret-down"></span
+            ></a>
+                    <div class="welcome-collapse-content">
+                        <p onclick="showMyAccount()">
+                            <i class="fa fa-user"></i> MY ACCOUNT
+                        </p>
+                        <p onclick="logoutUser()">
+                            <i class="fas fa-sign-out-alt"></i> LOGOUT
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="tel:+918378007800"> +918378007800</a>
+                </li>
+                <div class="hamburgerMenu" onclick="showMobileNavBar()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <div id="left">
+        
+    </div>
+    <div id="right">
+        <div id="ref_depo">
+            <div id="blue_block"></div>
+            <p id="text1">Refundable Deposit</p>
+            <p id="text2">This amount has to be paid during vehicle delivery</p>
+            <h4 id="rs">₹0</h4>
+        </div>
+        <!-- use javascript for pricing div -->
+        <div id="pricing">
+        </div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <p id="terms">I agree to the terms of use</p>
+    </div>
+    <h3 id="order"> "As per the district collectors order,commercial two-wheelers are not allowed to enter Kerala and Ooty district." For more, read T&C's"</h3>
+</body>
+<script src="./cart.js"></script>
+</html>

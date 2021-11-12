@@ -1,0 +1,320 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url();
+    background-size: 50%;
+}
+
+.flex-box-space-btw {
+    display: flex;
+    justify-content: space-between;
+}
+
+.non_selectable_txt {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14vh;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(30, 45, 81);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+header nav ul li a:hover {
+    color: orange;
+}
+
+header nav ul li a img {
+    width: 6.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 7px;
+}
+.loginPopupOverlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 5;
+}
+
+.loginPop {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 60%;
+    height: 50rem;
+    z-index: 2;
+    transition: 1s;
+}
+
+.loginPop>.loginPopRemove {
+    right: -2%;
+    top: -4%;
+}
+
+.loginPop>.logoSec {
+    position: absolute;
+    width: 35%;
+    height: 100rem;
+    margin-top: 0%;
+    background-image: url(../IMG_FILE/spritupdate.png);
+    background-size: 100% 50rem;
+    background-repeat: no-repeat;
+}
+
+.loginPop>.formSec,
+.otpSec {
+    background-color: white;
+    width: 65%;
+    height: 100%;
+    margin: 0;
+    float: right;
+    padding: 1.5rem 2rem;
+}
+
+.fleetAndPricingOverlay,
+.selectCity-overlay,
+.loginPopupOverlay,
+.myAccountOverlay,
+.paymentDoneOrNotOverlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 5;
+    overflow: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+#left{
+    
+    width: 60%;
+    height: 750px;
+    float: left;
+}
+#right{
+
+    width: 38%;
+    height: 750px;
+    float: right;
+}
+#ref_depo{
+    border: 1px solid rgb(210,210,210);
+    width: 85%;
+    margin: auto;
+    height: 80px;
+    margin-top: 130px;
+
+}
+#pricing{
+   
+       border:1px solid rgb(210,210,210);
+        width: 85%;
+        margin: auto;
+        height: 350px;
+        margin-top: 10px;
+     
+}
+#blue_block{
+    background-color: rgb(30,45,81);
+    width: 2%;
+    height: 80px;
+    float: left;
+}
+#text1{
+    font-weight: 100;
+    margin-left: 25px;
+    font-size: 22px;
+    margin-bottom: 0px;
+    float: left;
+}
+#text2{
+    font-weight: 100;
+    margin-left: 25px;
+    font-size: 18px;
+    margin-top: 0px;
+    float: left;
+}
+#rs{
+    float: right;
+    margin-right: 10px;
+    margin-top: -20px;
+}
+#promo{
+    margin-left: 100px;
+    width: 300px;
+    height: 45px;
+    border-radius: 75px;
+    font-weight: 100;
+    float: left;
+    font-size: 20px;
+}
+#check_logo{
+    width: 40px;
+    height: 44px;
+    background-color: white;
+    margin-left: 5px;
+
+}
+#image2{
+    width: 48px;
+    height: 44px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    
+}
+#txt{
+    margin-bottom: 0px;
+}
+#txt2{
+    margin-top: 0px;
+}
+#insure{
+    float: right;
+    margin-top: -35px;
+    margin-right: 10px;
+}
+#total{
+    float: left;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: 100;
+}
+#total_price{
+    float: right;
+    margin-right: 10px;
+}
+#cross{
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-left: -130px;
+    margin-top: 70px;
+}
+#exclude{
+    margin-top: 78px;
+   margin-left: -90px;
+    float: left
+}
+#tick{
+    width: 32px;
+    height: 32px;
+    margin-top: 72px;
+    margin-left: 210px;
+}
+#includes{
+    margin-left: 400px;
+    margin-top: -30px;
+}
+.switch{
+    float:left;
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    margin: 0 45px;
+    margin-top: 20px;
+    
+    margin-right: 15px;
+    
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.switch input {display: none}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 30px;
+    width:30px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+input:checked + .slider{
+    background-color: rgb(29,45,81);
+    margin-left: 50px;
+}
+#terms{
+    margin-top: 30px;
+    color: rgb(97,75,160);
+    font-size: 22px;
+    text-decoration: underline;
+}
+#button{
+    width: 480px;
+    margin-left: 45px;
+    height: 60px;
+    font-size: 28px;
+    background-color: rgb(29,45,81);
+    color: white;
+}
+#order{
+    margin-left: 260px;
+    font-size: 18px;
+}
+#pickup{
+    margin-left: 80px;
+    margin-top: 300px;
+    font-size: 22px;
+}
+#address{
+    margin-left: 80px;
+    font-size: 16px;
+}
+#late{
+    margin-top: 150px;
+    margin-left: 80px;
+    margin-bottom: 0px;
+}
+#delay{
+    margin-top: 0px;
+    margin-left: 80px;
+}
