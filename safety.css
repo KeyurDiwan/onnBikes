@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#mainSafetyContainer {
+    font-family: Montserrat, sans-serif;
+    color: #737373;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: 0rem;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    background-image: url(https://www.onnbikes.com/img/bodybackground.png);
+    background-size: 50%;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.navigation_bar {
+    width: 100%;
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    position: fixed;
+    z-index: 5;
+}
+
+.navigation_bar>ul {
+    font-size: 1.1rem;
+    width: 113rem;
+    list-style: none;
+    align-items: center;
+}
+
+.navigation_bar>ul>li>a {
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}
+
+.navigation_bar>ul>li>a:hover {
+    color: rgb(238, 127, 34);
+}
+
+.navigation_bar>ul>li>a>img {
+    width: 5rem;
+    border-radius: 1rem;
+}
+
+.spacing_in_line {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hamburgerMenu {
+    display: none;
+    width: 4.8rem;
+    height: 4rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.scrollHamburger>div {
+    background-color: gray !important;
+}
+
+.hamburgerMenu>div {
+    width: 90%;
+    height: 10%;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 0.6rem;
+    background-color: white;
+}
+
+.mobileNavBar {
+    position: absolute;
+    background-color: white;
+    top: 9rem;
+    height: 0;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.5fs;
+}
+
+.mobileNavBar.active {
+    height: 425%;
+    border-top: 1px solid rgb(197, 186, 186);
+    transition: 0.5s;
+}
+
+.mobileNavBar>ul>li {
+    list-style: none;
+    padding: 1.2rem 2rem;
+}
+
+.mobileNavBar>ul>li>a:hover {
+    color: orangered;
+}
+
+.mobileNavBar>ul>li>a {
+    text-decoration: none;
+    color: rgb(30, 45, 81);
+}
+
+.scrollingNavigation {
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    z-index: 10;
+    position: fixed;
+    top: -72px;
+    transform: translateY(70px);
+    transition: transform 500ms ease, background 900ms ease;
+    -webkit-transition: transform 500ms ease, background 900ms ease;
+}
+
+.scrollingNavigation img {
+    width: 5rem;
+    box-shadow: rgba(169, 169, 182, 0.25) 0px 0px 2px 2px;
+}
+
+.scrollingNavigation a {
+    color: rgb(30, 45, 81) !important;
+    font-size: small;
+}
+
+.scrollingNavigation a:hover {
+    color: rgb(238, 127, 34) !important;
+}
+
+.banerHome {
+    background: url(https://www.onnbikes.com/img/banner.jpg) no-repeat center;
+    width: 100%;
+    height: 35rem;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 100px rgb(0 0 0 / 90%) inset;
+    margin-bottom: 7rem;
+}
+
+.banerHome h1 {
+    width: 72%;
+    font-size: 1.5em;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.07;
+}
+
+.banerHome p {
+    width: 60%;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 20px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.Advantages.AdvantagesBox {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.Advantages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Advantagesp1 {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    width: 43.44rem;
+}
+
+.Advantagesp1::after {
+    color: #c80910;
+    display: block;
+    content: "____";
+    line-height: 0;
+}
+
+.Advantagesp2 {
+    width: 54.13rem;
+    margin: 4rem 0;
+}
+
+.HowonnBox1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.HowonnBoxes {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.safetyHowonn {
+    width: 70vw;
+    margin: 2rem 0;
+    display: flex;
+}
+
+.Howonndivimg {
+    padding: 0 2rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Howonndivinfo {
+    padding: 0 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.Steps_onn {
+    padding: 40px 0px 25px 0px;
+}
+
+.containerSteps_onn {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerSteps_onn::before,
+.Steps_onn_row::before {
+    display: table;
+    content: " ";
+}
+
+.Steps_onn_row {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.Steps_onnDivs {
+    /* box-shadow: 0 2px 16px #ccc; */
+    box-shadow: 0 0px 5px #d2d2d2;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px 8px;
+    margin: 30px 0;
+    height: 370px;
+    height: 310px;
+}
+
+.Steps_onnHedingP {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.Steps_onnTitle {
+    font-size: 17px;
+    line-height: 28px;
+    margin: 20px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.BenefitsMain {
+    margin: 7rem 0;
+}
+
+.benefitFirstdiv {
+    display: flex;
+    width: 71vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.benefitFirstAlldiv {
+    width: 31%;
+    margin: 0.5rem;
+    text-align: center;
+    padding: 3.5rem 2.5rem;
+}
+
+.benefitFirstAlldivimg {
+    height: 6.31rem;
+    width: 100%;
+}
+
+.benefitFirstheading {
+    margin: 2rem 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0rem;
+    color: #333333;
+}
+
+.benefitFirstdesc {
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.9;
+    letter-spacing: 0rem;
+    color: #737373;
+    text-align: center;
+}
+
+.section {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer {
+    background: url(https://www.onnbikes.com/img/bodybackground.png) #474747;
+    background-size: 50%;
+    color: white;
+    height: 100%;
+    padding-top: 2%;
+}
+
+.remove_dot {
+    list-style-type: none;
+    padding-left: inherit;
+    text-transform: none;
+    font-size: 12px;
+}
+
+.footerCont {
+    max-width: 90%;
+    margin: auto;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.footerContDivs {
+    display: flex;
+    padding: 10px;
+}
+
+.footerleftdiv {
+    width: 60%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.remove_dot li {
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.footerleftbox span {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.rightfooter {
+    width: 40%;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.rightfooterdiv1 {
+    width: 20%;
+}
+
+.rightfooterdiv2 {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .Advantag_med {
+        font-size: 1em;
+        margin-left: 80px;
+    }
+    .safety_media {
+        font-size: 1.2em;
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .safety_media2 {
+        font-size: 1.2em;
+        text-align: center;
+        flex-direction: column;
+    }
+    .Steps_onn_row {
+        flex-direction: column;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .benefitFirstdiv {
+        width: 100vw;
+    }
+    .benefitFirstAlldiv {
+        width: 35%;
+    }
+    .footerContDivs {
+        flex-direction: column;
+    }
+    .footerleftdiv {
+        display: flex;
+        flex-direction: column;
+    }
+    .rightfooter {
+        flex-direction: column;
+        padding: 0;
+    }
+    .Advantagesp2 {
+        width: 42.13rem;
+    }
+}
+
+@media only screen and (max-width: 745px) {
+    /* here i am creating .hamburgerMenu */
+    .navigation_bar>ul>li>a {
+        display: none;
+    }
+    .navigation_bar>ul>.logo_li>a {
+        display: block;
+    }
+    .navigation_bar .logo_li img {
+        width: 7rem;
+    }
+    .navigation_bar {
+        height: 10rem;
+    }
+    .navigation_bar ul {
+        display: block;
+        position: relative;
+        width: 95vw;
+    }
+    .hamburgerMenu {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

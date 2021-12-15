@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="em">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>login </title>
+<style>
+    .head {
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid gainsboro;
+        ;
+    }
+
+    #simplifying {
+        font-size: 25px;
+        color: grey;
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+
+    #welcome {
+        font-size: 15px;
+        color: grey;
+        margin-left: 80%;
+        margin-top: -10%;
+
+
+
+    }
+
+    #login {
+        width: 100px;
+        height: 40px;
+        background-color: #02b875;
+
+
+        color: white;
+    }
+
+    #signup {
+
+        width: 100px;
+        height: 40px;
+        background-color: white;
+
+        color: black;
+    }
+
+    .nav {
+        width: 100%;
+        height: 40px;
+        border-bottom: 0.3px solid gainsboro;
+        ;
+        margin-top: 0.5%
+    }
+
+    #home {
+        border: none;
+        margin-left: 10%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+        margin-top: 0.5%
+    }
+
+    #solutions {
+        border: none;
+        margin-left: 4%;
+        color: black;
+        font-size: 20px;
+        background-color: white;
+    }
+
+
+
+    .sign {
+
+        background-color: white;
+        width: 850px;
+        height: 500px;
+        border: 2px solid wheat;
+        margin-left: 150px;
+        margin-top: 50px;
+
+    }
+
+    #box1 {
+
+        width: 400px;
+        height: 30px;
+        margin-left: 50px;
+        margin-top: 50px;
+
+
+    }
+
+    #box2 {
+        width: 400px;
+        height: 30px;
+        margin-left: 75px;
+        margin-top: 40px;
+    }
+
+</style>
+
+<body>
+    <div class="head">
+
+
+        <label id="simplifying">Simplifying Mobility </label>
+        <label id="welcome" style="margin-top: -10px;">Welcome</label>
+
+
+        <button id="login" onclick="login()"><b>LOGIN</b></button>
+        <button id="signup" onclick="signup()"><b>SIGN UP</b></button>
+
+
+    </div>
+
+    <div class="nav">
+        <button onclick="home" id="home"><b>Home</b></button>
+        <button onclick="solutions" id="solutions">Solutions</button>
+    </div>
+
+
+    <div class="sign">
+
+        <h2 style="margin-left: 40px;">Sign up for your simplifying mobility account</h2>
+        <label style="margin-left: 40px;">Full name<span style="color: red;">*</span></label>
+        <input type="text" id="box1">
+        <br>
+
+        <label style="margin-left: 40px;">Email<span style="color: red;">*</span></label>
+        <input type="text" id="box2">
+
+
+        <div id="m" style="border-bottom: 1px solid gray; margin-top: 5%;">
+
+        </div>
+        <button
+            style="color: white; text-align:center; background-color: #02b875; margin-left: 100px; width: 200px; height: 35px; margin-top: 50px; ">REGISTER</button>
+        <button
+            style="color: black; text-align:center; background-color: whitesmoke; margin-left: 30px;  width: 200px; height: 35px;margin-top: 50px;">CANCEL</button>
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

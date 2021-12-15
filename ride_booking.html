@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" href="https://www.onnbikes.com/img/favicon32.png" />
+    <link rel="stylesheet" href="ride_booking.css" />
+
+    <title>
+        Rent a Bike or Scooty with Zero Deposit at ₹ 8/Hour - ONN Bikes
+    </title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="flex-box-space-btw">
+                <li>
+                    <a href="home.html">HOME</a>
+                </li>
+                <li>
+                    <a href="offers.html">OFFERS</a>
+                </li>
+                <li>
+                    <a href="../HTML_FILE/rentTOown.html">RENT TO OWN</a>
+                </li>
+                <li class="logo_li">
+                    <a href="#">
+                        <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt="" srcset="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML_FILE/faq1.html">FAQ</a>
+                </li>
+                <li style="position: relative">
+                    <a href="../HTML_FILE/home.html" class="signupNav"> LOGIN/SIGNUP</a>
+                    <a href="#" onclick="showWelcomeContent()" class="welcomeNav hide">WELCOME <span class="fa fa-caret-down"></span
+            ></a>
+                    <div class="welcome-collapse-content">
+                        <p onclick="showMyAccount()">
+                            <i class="fa fa-user"></i> MY ACCOUNT
+                        </p>
+                        <p onclick="logoutUser()">
+                            <i class="fas fa-sign-out-alt"></i> LOGOUT
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="tel:+918378007800"> +918378007800</a>
+                </li>
+                <div class="hamburgerMenu" onclick="showMobileNavBar()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="mobileNavBar">
+                    <ul>
+                        <li>
+                            <a href="../HTML_FILE/home.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="../HTML_FILE/offers.html">OFFERS</a>
+                        </li>
+                        <li>
+                            <a href="../HTML_FILE/rentTOown.html">RENT TO OWN</a>
+                        </li>
+                        <li>
+                            <a href="../HTML_FILE/home.html">FAQ</a>
+                        </li>
+
+                        <li style="position: relative">
+                            <a href="../HTML_FILE/home.html" class="signupNav">
+                  LOGIN/SIGNUP</a
+                >
+                <a
+                  href="#"
+                  onclick="showWelcomeContent()"
+                  class="welcomeNav hide"
+                  >WELCOME <span class="fa fa-caret-down"></span
+                ></a>
+                            <div class="welcome-collapse-content">
+                                <p onclick="showMyAccount()">
+                                    <i class="fa fa-user"></i> MY ACCOUNT
+                                </p>
+                                <p onclick="logoutUser()">
+                                    <i class="fas fa-sign-out-alt"></i> LOGOUT
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="tel:+918378007800"> +918378007800</a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="ride-now">
+        <div class="rideNow non_selectable_txt">
+            <div onclick="showSelectCity()">
+                <p id="currentlocation" class="collapsible-content-tri rideNow-city-name">
+                    BENGALURU
+                </p>
+            </div>
+            <div class="choose_plan">
+                <div class="collapsible-content-tri collapse-btn-rideNow" onclick="showrideNowCollapse()">
+                    HOURLY/DAILY
+                </div>
+                <div class="collapse-content-rideNow" id="planName">
+                    <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','HOURLY/DAILY')">
+                        HOURLY/DAILY
+                    </p>
+                    <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','30 DAYS BOOKING')">
+                        30 DAYS BOOKING
+                    </p>
+                </div>
+            </div>
+            <div class="startDateSelector">
+                <p>
+                    <span class="startDateSpan">START DATE</span>
+                    <span class="calenderStartDate hide">
+              <strong class="calenderStartDate-date">14</strong>
+              <span class="calenderStartDate-weekDay">Monday</span>
+                    <span class="calenderStartDate-month">July 2021</span>
+                    <span class="calenderStartDate-time">09:00 AM</span>
+                    </span>
+                    <img onclick="showCalender('startDateSelector')" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="" width="35" height="35" />
+                </p>
+
+                <div class="calender hide">
+                    <div class="month">
+                        <i class="fa fa-arrow-left" onclick="changeMonth('prev','startDateSelector')"></i>
+                        <p>2021-jun</p>
+                        <i class="fa fa-arrow-right" onclick="changeMonth('next','startDateSelector')"></i>
+                    </div>
+                    <div class="days">
+                        <div>su</div>
+                        <div>Mo</div>
+                        <div>tu</div>
+                        <div>we</div>
+                        <div>th</div>
+                        <div>fr</div>
+                        <div>sa</div>
+                    </div>
+                    <div class="dates"></div>
+                </div>
+
+                <div class="calender_timing hide">
+                    <div class="wholeDate">
+                        <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                        <p>Jun 13, 2021</p>
+                        <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                    </div>
+                    <div class="availableTimings"></div>
+                </div>
+            </div>
+            <div class="endDateSelector">
+                <p>
+                    <span class="endDateSpan">END DATE</span>
+                    <span class="calenderEndDate hide">
+              <strong class="calenderEndDate-date">14</strong>
+              <span class="calenderEndDate-weekDay">Monday</span>
+                    <span class="calenderEndDate-month">JUN 21</span>
+                    <span class="calenderEndDate-time">09:00 AM</span>
+                    </span>
+                    <img onclick="showCalender('endDateSelector')" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="" width="35" height="35" />
+                </p>
+                <div class="calender hide">
+                    <div class="month">
+                        <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                        <p>2021-jun</p>
+                        <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                    </div>
+                    <div class="days">
+                        <div>su</div>
+                        <div>Mo</div>
+                        <div>tu</div>
+                        <div>we</div>
+                        <div>th</div>
+                        <div>fr</div>
+                        <div>sa</div>
+                    </div>
+                    <div class="dates"></div>
+                </div>
+                <div class="calender_timing hide">
+                    <div class="wholeDate">
+                        <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                        <p></p>
+                        <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                    </div>
+                    <div class="availableTimings"></div>
+                </div>
+            </div>
+            <div class="rideNowBtn" onclick="checkStartAndEndDateCont()">
+                <button>RIDE NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="save-more" onclick="changeCollapseBtnValue('collapse-btn-rideNow','30 DAYS BOOKING')">
+        <div class="calender-icon">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div>Save More, <a href="#">Book Monthly</a></div>
+    </div>
+
+    <section class="filter-bar">
+        <div class="filter-heading" onclick="showCollapseContentFilter()">
+            Filter <a style="cursor: pointer" onclick="clearall()">Clear All</a>
+        </div>
+        <div class="manufacturer-cont">
+            <h6>MANUFACTURER</h6>
+            <div class="manufacturer-checkbox-cont" id="manufacturer">
+                <label for="royal-enfeild">
+            <input
+              type="checkbox"
+              name="Royal Enfield"
+              id="royal-enfeild"
+              onclick="manufacturer(this.id)"
+            />
+            Royal Enfield
+          </label>
+
+                <label for="bajaj">
+            <input
+              type="checkbox"
+              name="Bajaj"
+              id="bajaj"
+              onclick="manufacturer(this.id)"
+            />
+            Bajaj
+          </label>
+
+                <label for="honda">
+            <input
+              type="checkbox"
+              name="Honda"
+              id="honda"
+              onclick="manufacturer(this.id)"
+            />
+            Honda
+          </label>
+
+                <label for="yamaha">
+            <input
+              type="checkbox"
+              name="Yamaha"
+              id="yamaha"
+              onclick="manufacturer(this.id)"
+            />
+            Yamaha
+          </label>
+            </div>
+        </div>
+
+        <div class="model-cont">
+            <h6>MODEL</h6>
+            <div class="model-checkbox-cont" id="model">
+                <label for="350_classic">
+            <input
+              type="checkbox"
+              name="350 Classic"
+              onclick="model(this.id)"
+              id="350_classic"
+            />
+            350 Classic
+          </label>
+
+                <label for="avenger_220_street">
+            <input
+              type="checkbox"
+              name="Avenger 220 Street"
+              onclick="model(this.id)"
+              id="avenger_220_street"
+            />
+            Avenger 220 Street
+          </label>
+
+                <label for="avenger_220_cruise">
+            <input
+              type="checkbox"
+              name="Avenger 220 Cruise"
+              onclick="model(this.id)"
+              id="avenger_220_street"
+            />
+            Avenger 220 Cruise
+          </label>
+
+                <label for="active">
+            <input
+              type="checkbox"
+              name="Activa"
+              onclick="model(this.id)"
+              id="activa"
+            />
+            Activa
+          </label>
+
+                <label for="fz">
+            <input type="checkbox" name="FZ" onclick="model(this.id)" id="fz" />
+            FZ
+          </label>
+
+                <label for="dio">
+            <input
+              type="checkbox"
+              name="Dio"
+              onclick="model(this.id)"
+              id="dio"
+            />
+            Dio
+          </label>
+
+                <label for="pulsar">
+            <input
+              type="checkbox"
+              name="Pulsar"
+              onclick="model(this.id)"
+              id="pulsar"
+            />
+            Pulsar
+          </label>
+
+                <label for="Ct_100">
+            <input
+              type="checkbox"
+              name="CT 100"
+              onclick="model(this.id)"
+              id="Ct_100"
+            />
+            Ct 100
+          </label>
+            </div>
+        </div>
+
+        <div class="vehicle-cont">
+            <h6>VEHICLE</h6>
+            <div class="vehicle-checkbox-cont" id="vehicle">
+                <label for="motorcycle">
+            <input
+              type="checkbox"
+              name="Motorcycle"
+              onclick="vehicle(this.id)"
+              id="motorcycle"
+            />
+            Motorcycle
+          </label>
+
+                <label for="scooter">
+            <input
+              type="checkbox"
+              name="Scooter"
+              onclick="vehicle(this.id)"
+              id="scooter"
+            />
+            Scooter
+          </label>
+            </div>
+        </div>
+    </section>
+
+    <section class="bike-showcase"></section>
+
+    <div class="selectCity-overlay hide">
+        <div class="selectCity">
+            <div class="removeSelectCity" onclick="removePopUp('selectCity-overlay')"></div>
+            <div class="searchArea">
+                <div class="cityInputCont">
+                    <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search" />
+                </div>
+                <div class="CitySearchInputInfo">
+                    <p>You've selected <br /><span>Bengaluru</span></p>
+                    <p class="city-search-input-info-para2">
+                        Tell us where you are and <br />we make sure you #RideONN
+                    </p>
+                </div>
+            </div>
+            <div class="cityArea">
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png" alt="" srcset="" />
+                        <p>BENGALURU</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png" alt="" srcset="" />
+                        <p>HYDERABAD</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt="" srcset="" />
+                        <p>JAIPUR</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg" alt="" srcset="" />
+                        <p>GURUGRAM</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt="" srcset="" />
+                        <p>MYSURU</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt="" srcset="" />
+                        <p>UDAIPUR</p>
+                    </div>
+                </div>
+                <div class="cityCont">
+                    <div>
+                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/ahmedabad.png" alt="" srcset="" />
+                        <p>AHMEDABAD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginPopupOverlay hide">
+        <div class="loginPop">
+            <div class="loginPopRemove" onclick="removePopUp('loginPopupOverlay')"></div>
+            <div class="logoSec"></div>
+            <div class="otpSec hide">
+                <div class="otp_heading">
+                    <p>OTP VERIFY</p>
+                </div>
+
+                <input type="text" name="otp" id="otp" placeholder="OTP" />
+
+                <p class="otpInfo">
+                    One Time Password (OTP) has been sent to your mobile, please enter the same here to login.
+                </p>
+                <button onclick="verifyOTP()" class="verifyOTP">
+            Request Verify
+          </button>
+            </div>
+            <div class="formSec">
+                <div class="heading">
+                    <span class="currForm" onclick="showSignup()">LOGIN</span> |
+                    <span onclick="showSignup()">SIGNUP</span>
+                </div>
+                <div class="fb_google">
+                    <div class="fbLogin">
+                        <button>Facebook</button>
+                    </div>
+                    <div class="googleLogin">
+                        <button>Google+</button>
+                    </div>
+                </div>
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                <form id="login_form">
+                    <div class="inputCont">
+                        <input type="text" name="email/number" id="emailORPhone" placeholder="EMAIL ID / Phone number" />
+                    </div>
+                    <div class="inputCont">
+                        <input type="password" name="password" id="password" placeholder="Password" />
+                    </div>
+                    <div class="inputCont checkbox">
+                        <label for="remember_me">
+                <input type="checkbox" name="remember_me" id="remember_me" />
+                Remember me
+              </label>
+                    </div>
+                    <button class="login-Btn" onclick="checkUsers(event)">Login</button>
+                    <div>
+                        <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+                    </div>
+                </form>
+                <form id="signup_form" class="hide">
+                    <div>
+                        <div>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" class="input-event" />
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">No space and special character</p>
+                        </div>
+                        <div>
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="input-event" />
+
+                            <p class="warning">No space and special character</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="text" name="email" id="email" placeholder="Email Address" class="input-event" />
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Enter a valid email id</p>
+                        </div>
+                        <div>
+                            <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)" class="input-event" />
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Enter a valid mobile number</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password" class="input-event" />
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Minimum 6 character</p>
+                        </div>
+                    </div>
+                    <button class="login-Btn" onclick="signupUser(event)">
+              Signup
+            </button>
+                    <div>
+                        <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="myAccount hide">
+        <div class="removeMyAccount" onclick="removePopUp('myAccount')"></div>
+        <div class="left-side">
+            <div class="biker-icon"></div>
+            <p class="user-name"></p>
+            <p class="user-mail"></p>
+            <p class="onn-credits">ONN Credits: 0</p>
+            <hr />
+            <button class="bookingHistory-myAccount active" onclick="changeRightOfAccount('historyCont','yourProfileCont','bookingHistory-myAccount','yourProfile-myAccount')">
+          <i class="fas fa-history"></i> Booking History
+        </button>
+            <button class="yourProfile-myAccount" onclick="changeRightOfAccount('yourProfileCont','historyCont','yourProfile-myAccount','bookingHistory-myAccount')">
+          <i class="fa fa-home"></i> Your Profile
+        </button>
+        </div>
+
+        <div class="right-side">
+            <div class="historyCont">
+                <div class="no-booking-history">
+                    <h1>
+                        You have no previous booking with us. Please book a ride to see all updates regarding that in this page.
+                    </h1>
+                </div>
+            </div>
+
+            <div class="yourProfileCont hide">
+                <div class="edit-account">
+                    <div class="removePencilIcon" onclick="enableInputBox('edit-account')"></div>
+                    <h3>Edit Account</h3>
+                    <input type="text" name="first_name" id="first_name-yourProfile" disabled value="Rahul" />
+                    <input type="text" name="last_name" id="last_name-yourProfile" disabled value="Rajput" />
+
+                    <div class="email-yourProfile"></div>
+                    <div class="mobile-yourProfile"></div>
+
+                    <textarea name="address" id="address-yourProfile" cols="37" rows="2" placeholder="Enter Address" disabled></textarea>
+                    <button><i class="fas fa-sync-alt"></i> UPDATE</button>
+                </div>
+
+                <div class="change-password">
+                    <div class="removePencilIcon" onclick="enableInputBox('change-password')"></div>
+                    <h3>Change Password</h3>
+                    <input type="password" name="old-password" id="old-password" disabled placeholder="Old Password" />
+                    <input type="password" name="new-password" id="new-password" disabled placeholder="New Password" />
+                    <input type="password" name="confirm-password" id="confirm-password" disabled placeholder="Confirm Password" />
+                    <button><i class="fas fa-sync-alt"></i> CHANGE PASSWORD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="selectPickupOverlay hide">
+        <div class="selectPickup">
+            <div class="selctPickupRemove" onclick="removePopUp('selectPickupOverlay')"> X </div>
+            <p>Select Pickup Location</p>
+            <hr />
+            <div id="expand"> X </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="ride_booking.js"></script>

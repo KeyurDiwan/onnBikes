@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+<!--
+
+Design by Keyur Diwan 
+https://www.onnbikes.com/ Clone
+
+-->
+<html lang="en">
+
+<head>
+
+    <!-- 
+        for the styling i have use Bootstrap and vanila css both
+     -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- Onnbikes Logo -->
+    <link rel="icon" href="https://www.onnbikes.com/img/favicon32.png" />
+
+    <!-- Link to CSS page in this line -->
+    <link rel="stylesheet" href="home.css" />
+    <title>Rent a Bike or Scooty with Zero Deposit at $8/Hour-ONN Bikes</title>
+</head>
+
+<body>
+
+
+    <!-- Header of home page {onnbikes.com} -->
+
+    <header class="header_div" id="header_div">
+        <div class="img_slideshow">
+            <nav class="navigation_bar">
+                <ul class="spacing_in_line">
+                    <li>
+                        <a href="#move_to_whyOnn">WHY ONN?</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="move_to_FleetAndPricing()">FLEET AND PRICING</a
+              >
+            </li>
+            <li>
+              <a href="safety.html">SAFETY</a>
+                    </li>
+                    <li class="logo_list">
+                        <a href="#">
+                            <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt="" srcset="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq1.html">FAQ</a>
+                    </li>
+                    <li style="position: relative">
+                        <a href="#header_div" onclick="showLoginSignupPopup()" class="signupNav">
+                LOGIN/SIGNUP</a
+              >
+              <a href="#" onclick="showWelcomeContent()" class="welcomeNavigation hide"
+                >WELCOME <span class="fa fa-caret-down"></span
+              ></a>
+                        <div class="welcome-hide_content">
+                            <p onclick="showMyAccount()">
+                                <i class="fa fa-user"></i> MY ACCOUNT
+                            </p>
+                            <p onclick="logoutUser()">
+                                <i class="fas fa-sign-out-alt"></i> LOGOUT
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="tel:+918378007800">+918378007800</a>
+                    </li>
+                    <div class="hamburgerMenu" onclick="showMobileNavBar()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mobileNavigation">
+                        <ul>
+                            <li>
+                                <a href="#move_to_whyOnn">WHY ONN?</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="move_to_FleetAndPricing()">FLEET AND PRICING</a
+                  >
+                </li>
+                <li>
+                  <a href=".safety.html">SAFETY</a>
+                            </li>
+                            <li>
+                                <a href="faq1.html">FAQ</a>
+                            </li>
+
+                            <li style="position: relative">
+                                <a href="#header_div" onclick="showLoginSignupPopup()" class="signupNav">
+                    LOGIN/SIGNUP</a
+                  >
+                  <a
+                    href="#"
+                    onclick="showWelcomeContent()"
+                    class="welcomeNavigation hide"
+                    >WELCOME <span class="fa fa-caret-down"></span
+                  ></a>
+                                <div class="welcome-hide_content">
+                                    <p onclick="showMyAccount()">
+                                        <i class="fa fa-user"></i> MY ACCOUNT
+                                    </p>
+                                    <p onclick="logoutUser()">
+                                        <i class="fas fa-sign-out-alt"></i> LOGOUT
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#"> +91 9924664558</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="changingText tagLine">
+                <h1 id="tagLineHeading">LONG TERM RENTALS</h1>
+                <h3>CHOOSE FROM MONTHLY & QUADRATIC PLAN</h3>
+            </div>
+
+            <div class="rideNow">
+                <div onclick="showSelectCity()" class="rideNowcityCont">
+                    <a href="#header_div">
+                        <p class="collapsible-content-tri rideNow-city-name">SELECT CITY</p>
+                    </a>
+                </div>
+
+                <div class="choose_plan">
+                    <div class="collapsible-content-tri hide_btn-rideNow" onclick="showrideNowCollapse()">
+                        HOURLY/DAILY
+                    </div>
+                    <div class="hide_content-rideNow" id="planName">
+                        <p onclick="changeCollapsingBtnValue('hide_btn-rideNow','HOURLY/DAILY')">
+                            HOURLY/DAILY
+                        </p>
+                        <p onclick="changeCollapsingBtnValue('hide_btn-rideNow','30 DAYS BOOKING')">
+                            30 DAYS BOOKING
+                        </p>
+                    </div>
+                </div>
+
+                <!-- JAVASCRIPT  file include  all the logic behind building Calendar dynamically using constuctor function.   -->
+
+                <div class="selectStartDate">
+                    <p>
+                        <span class="selectStartColumn">START DATE</span>
+                        <span class="calendarStartingDate hide">
+                <strong class="calendarStartingDate-date"></strong>
+                <span class="calendarStartingDate-weekDay"></span>
+                        <span class="calendarStartingDate-month"></span>
+                        <span class="calendarStartingDate-time"></span>
+                        </span>
+                        <img onclick="calendarVisible('selectStartDate')" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                            alt="" width="35" height="35" />
+                    </p>
+
+                    <div class="calendar hide">
+                        <div class="month">
+                            <i class="fa fa-arrow-left" onclick="changeMonth('prev','selectStartDate')"></i>
+                            <p></p>
+                            <i class="fa fa-arrow-right" onclick="changeMonth('next','selectStartDate')"></i>
+                        </div>
+                        <div class="days">
+                            <div>Su</div>
+                            <div>Mo</div>
+                            <div>Tu</div>
+                            <div>We</div>
+                            <div>Th</div>
+                            <div>Fr</div>
+                            <div>Sa</div>
+                        </div>
+                        <div class="dates"></div>
+                    </div>
+
+                    <div class="calendar_timing hide">
+                        <div class="wholeDate">
+                            <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                            <p></p>
+                            <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                        </div>
+                        <div class="availableTimings"></div>
+                    </div>
+                </div>
+                <div class="endDateSelector">
+                    <p>
+                        <span class="endDateSpan">END DATE</span>
+                        <span class="calendarEndDate hide">
+                <strong class="calendarEndDate-date"></strong>
+                <span class="calendarEndDate-weekDay"></span>
+                        <span class="calendarEndDate-month"></span>
+                        <span class="calendarEndDate-time"></span>
+                        </span>
+                        <img onclick="calendarVisible('endDateSelector')" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                            alt="" width="35" height="35" />
+                    </p>
+                    <div class="calendar hide">
+                        <div class="month">
+                            <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                            <p></p>
+                            <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                        </div>
+                        <div class="days">
+                            <div>Su</div>
+                            <div>Mo</div>
+                            <div>Tu</div>
+                            <div>We</div>
+                            <div>Th</div>
+                            <div>Fr</div>
+                            <div>Sa</div>
+                        </div>
+                        <div class="dates"></div>
+                    </div>
+                    <div class="calendar_timing hide">
+                        <div class="wholeDate">
+                            <i class="fa fa-arrow-left" onclick="changeMonth('prev','endDateSelector')"></i>
+                            <p></p>
+                            <i class="fa fa-arrow-right" onclick="changeMonth('next','endDateSelector')"></i>
+                        </div>
+                        <div class="availableTimings"></div>
+                    </div>
+                </div>
+
+                <!-- Ride Now button checks whether both start and end date is mentioned and it takes to the next page 
+                Check with the logic and then link to ride now page-->
+
+                <div class="rideNowBtn" onclick="checkStartAndEndDateCont()">
+                    <button>RIDE NOW</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Body part of Home page, it's  static page -->
+
+    <div class="main_content">
+        <div class="app_link">
+            <div>
+                <img src="https://www.onnbikes.com/img/playstore.svg" alt="" srcset="" />
+            </div>
+            <div>
+                <h2>ONN Bikes Rental App</h2>
+            </div>
+            <div>
+                <img src="https://www.onnbikes.com/img/appstore.svg" alt="" srcset="" />
+            </div>
+        </div>
+        <div class="whyONN" id="move_to_whyOnn">
+            <h2>Why ONN?</h2>
+            <p>
+                We simplified bike rentals, so you can focus on what's important to you.
+            </p>
+            <div class="whyONN_advantages spacing_in_line">
+                <div>
+                    <img src="https://www.onnbikes.com/img/Safe-Rides-Icon.svg" alt="" srcset="" />
+                    <p class="whyONN_advantage_tagLine">Safe Rides</p>
+                    <p class="whyONN_advantage_tagLine_content">
+                        Your safety is our priority. From sanitizing all bikes before every use, to extensive on-ground safety measures, your rides with ONN will always be safe and reliable. We also offer helmets on-demand.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/Flexible-Ownership.svg" alt="" srcset="" />
+                    <p class="whyONN_advantage_tagLine">Flexible Ownership</p>
+                    <p class="whyONN_advantage_tagLine_content">
+                        Enjoy the freedom of owning a two-wheeler without the hefty down-payments, EMIs and paperwork. Now choose from rent-to-own, monthly/quarterly bookings, and even daily plans.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/Smarter-Mobility.svg" alt="" srcset="" class="big_img" />
+                    <p class="whyONN_advantage_tagLine">Smarter Mobility</p>
+                    <p class="whyONN_advantage_tagLine_content">
+                        With your trusty ONN app, you can choose any bike, make instant payments, get offers, and manage all aspect of your ONN experience right from the comfort and ease of your mobile app.
+                    </p>
+                </div>
+                <div class="ONN_Stations">
+                    <img src="https://www.onnbikes.com/img/ONN-Stations.svg" alt="" srcset="" />
+                    <p class="whyONN_advantage_tagLine">ONN Stations</p>
+                    <p class="whyONN_advantage_tagLine_content">
+                        Your local ONN Station is here to make ensure your two-wheeler experience is flawless. At your neighborhood station, you get to pick any bike, get maintenance, sanitized, and a lot more.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="featuredOn">
+            <h2>Featured On</h2>
+            <p>Our complete press coverage.</p>
+            <div class="featuredOn_img spacing_in_line">
+                <div>
+                    <img src="https://www.onnbikes.com/img/feature/aninews.png" alt="" srcset="" onclick="location.href = 'https://www.aninews.in/news/business/business/onn-bikes-raises-rs-45-cr-funding-towards-expansion201711201813040001/'" />
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/feature/business-standard.png" alt="" srcset="" onclick="location.href = 'https://www.business-standard.com/article/news-ani/onn-bikes-raises-rs-4-5-cr-funding-towards-expansion-117112000903_1.html'" />
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/feature/bwdisrupt.png" alt="" srcset="" onclick="location.href = 'http://bwdisrupt.businessworld.in/article/ONN-Bikes-Raises-Pre-Series-A-Investment-from-Z-Nation-Lab-JITO-Angels-and-Venture-Catalysts/20-11-2017-132233/'"
+                    />
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/feature/thenewsminute.png" alt="" srcset="" onclick="location.href = 'http://www.thenewsminute.com/article/bike-rental-startup-onn-bikes-raises-692000-pre-series-round-led-z-nation-lab-71926'" />
+                </div>
+                <div>
+                    <img src="https://www.onnbikes.com/img/feature/vvcircle.jpg" alt="" srcset="" onclick="location.href = 'https://www.vccircle.com/bike-rentals-startup-onn-bikes-raises-692k-in-pre-series-a-funding'" />
+                </div>
+            </div>
+        </div>
+
+        <div class="contactUs">
+            <h2>Contact US</h2>
+            <p>Any Bike Renting Issue? Feel Free to Contact us.</p>
+
+            <div class="spacing_in_line contactUs_parts">
+                <div class="contactUs_leftContent">
+                    <div class="form">
+                        <div class="firstName_lastName spacing_in_line">
+                            <div>
+                                <span><i class="fas fa-user"></i></span>
+                                <input type="text" placeholder="First Name" id="first_name" />
+                            </div>
+                            <div>
+                                <span><i class="fas fa-user"></i></span>
+                                <input type="text" placeholder="Last Name" id="last_name" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <input type="text" placeholder="Email" id="email" />
+                        </div>
+                        <div>
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <input type="text" placeholder="Mobile Number" id="mobile_number" />
+                        </div>
+
+                        <div class="form_collapsing_container">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <button class="hide_btn-form" onclick="showFormCity()">
+                  Bengaluru
+                </button>
+                            <div class="hide_content-form" id="formOptionBox">
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Bengaluru')">
+                                    BENGALURU
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Hyderabad')">
+                                    HYDERABAD
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Jaipur')">
+                                    JAIPUR
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Mysuru')">
+                                    MYSURU
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Pune')">
+                                    PUNE
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Udaipur')">
+                                    UDAIPUR
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Ahmedabad')">
+                                    AHMEDABAD
+                                </div>
+                                <div onclick="changeCollapsingBtnValue('hide_btn-form','Franchise')">
+                                    FRANCHISE
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span><i class="fas fa-info"></i></span>
+                            <textarea name="" id="message_textArea" cols="103" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <div>
+                            <button id="submit_contactUs">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contactUs_rightContent accordian_container">
+                    <div class="hide_container">
+                        <button class="hide_btn">MUMBAI - CORPORATE HQ</button>
+                        <div class="hide_content">
+                            <h5>Motocruizer Technologies (I) Pvt. Ltd.</h5>
+                            <p>
+                                Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi Mumbai Mumbai City MH 400025 IN
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">BENGALURU</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>KORAMANGALA</p>
+                                    <p>
+                                        No 150/1 and 2, Hosur Main Road, Opposite Big Bazaar, Next to Raja Honda, Koramangala, Bengaluru - 560095
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>ELECTRONIC CITY</p>
+                                    <p>
+                                        #634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City Phase,Bengaluru 560100
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>MS RAMAIAH COLLEGE</p>
+                                    <p>
+                                        Ground Floor, Sree Premprasad Complex, Opposite Ramaiah Hospital, New BEL Road, M S Ramaiah College, Bengaluru - 560054
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>KUNDALAHALLI</p>
+                                    <p>
+                                        Munni Reddy Complex, Varthur Main Road, Opposite Nadhini Wines, Silver Springs Layout, Kundalahalli, Bengaluru - 560066
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>YELAHANKA</p>
+                                    <p>
+                                        200/1, KV SR Layout, Kattigenahalli, Bagalur Main Road, Next to Reliance Fresh, Bengaluru - 560063
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>SILK BOARD SRCM</p>
+                                    <p>
+                                        28, Hosur Road, Madiwala, Balaji Nagar, BTM Layout 1, Central Silk Board Colony, Stage 2, BTM Layout, Bengaluru, Karnataka 560068
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>ELECTRONIC CITY HUB</p>
+                                    <p>
+                                        #634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City Phase,Bengaluru 560100
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">HYDERABAD</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>MADHAPUR</p>
+                                    <p>
+                                        Plot No.539, Ayyappa Society, 100ft Road, Madhapur, Hyderabad
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>GACHIBOWLI</p>
+                                    <p>
+                                        Vision Ultima Building, Behind Radisson Hotel, Gachibowli, Hyderabad
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>AMEERPET</p>
+                                    <p>
+                                        Swati Manor, Beside Aditya Trade center, Kumar Basti, Ameerpet, Hyderabad, Telangana 500082
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>DILSUKHNAGAR</p>
+                                    <p>
+                                        16-2-741/29 & 37, Anushka Towers, Bank colony, New malakpet, Dilsukhnagar. LandMark:- Beside DTDC Courier & Oasis Reproductive Hospital.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>SECUNDERABAD</p>
+                                    <p>
+                                        Opposite to Yeshoda Hospital Parking Alexander Rd, Kummari Guda, Shivaji Nagar, Secunderabad, Telangana 500003.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>RAIDURGAM POLICE COMMISSIONARATE</p>
+                                    <p>
+                                        OYO 3607 Apartment Gachibowli under Stilt parking. Plot No 33 & 34, Udaya Elite, Beside Care Hospital lane, Besides Cyberabad Police commissionerate,Gachibowli, Hyderabad, Telangana 500032
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>CHANDA NAGAR</p>
+                                    <p>
+                                        Akshita Spaces, Second Floor, Plot # 194p, Rajendar Reddy Nagar Colony, Ameenpur Road, Chanda Nagar, Hyd -500050.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">JAIPUR</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>GT - GAURAV TOWER</p>
+                                    <p>
+                                        Malviya Nagar Road, D-Block, Malviya Nagar, D-Block, Crystal Court, Malviya Nagar, Jaipur, Rajasthan 302017
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>GOLD SOUK GRAND MALL -JAWAHAR CIRCLE</p>
+                                    <p>
+                                        Gold Souk Grand Mall (Near Hotel Lalit, Basement 2 Parking), Jaipur, Rajasthan 302001
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>C SCHEME</p>
+                                    <p>
+                                        Man Upasana C-44 Sardar Patel Marg Panch Batti, C Scheme, Ashok Nagar Jaipur, Rajasthan 302001
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>NEW AATISH MARKET- METRO STATION</p>
+                                    <p>
+                                        New Aatish Market Metro station, Gurjar ki Thadi Underpass, Sultan Nagar, Shanthi Nagar,Near Metro Station, Mansarovar, Jaipur, Rajasthan 302020
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>JAGATPURA ROAD</p>
+                                    <p>
+                                        Jagatpura Rd, Beside Credr Showroom, Shyam Vihar Colony, Malviya Nagar, Jaipur, Rajasthan 302017
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>RAJA PARK</p>
+                                    <p>
+                                        Das and Yadav Complex, Panchwati Circle, Raja Park, Jaipur, Rajasthan 302004
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>MANSAROVAR- SHIPRA PATH</p>
+                                    <p>
+                                        34/17, Shipra path,Opposite Reil house, Mansarovar, Jaipur-302020
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">MYSURU</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>INFOSYS</p>
+                                    <p>
+                                        Shobhja Gate, Hebbal Industrial Area, Meenakunte, Hebbal Industrial Estate, Mysuru, Karnataka 570016
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>JAGANMOHAN PALACE</p>
+                                    <p>
+                                        425 - 426, Deshika Road, Opp. Jaganmohan Palace, Subbarayanakere, Chamrajpura, Mysuru, Karnataka 570024
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>GOKULAM</p>
+                                    <p>
+                                        350, 5th Main Rd, Gokulam 2nd Stage, Gokulam, Mysuru, Karnataka 570002
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">PUNE</button>
+                        <div class="hide_content">
+                            <h5>Motocruizer Technologies (I) Pvt. Ltd.</h5>
+                            <p>
+                                Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi Mumbai Mumbai City MH 400025 IN
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">UDAIPUR</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>UDAIPOLE</p>
+                                    <p>
+                                        Shop NO-6, Arihant Plaza ,Opposite ICICI Bank Udaipole ,Udaipur-313001
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">AHMEDABAD</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>VIJAY CROSS ROAD</p>
+                                    <p>
+                                        The Link, Nr. Vijay Cross Road, Navrangpura, Ahmedabad 380009
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hide_container">
+                        <button class="hide_btn">GURGAON</button>
+                        <div class="hide_content">
+                            <ul>
+                                <li>
+                                    <p>Omaxe celebration mall</p>
+                                    <p>2nd floor, office, near Subash chowk, gurgaon 122001</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="FAQ_mainPage">
+        <div class="FAQs_section">
+            <h2>Top FAQs</h2>
+            <p>Renting a Bike should be Easy, Like our FAQs.</p>
+
+            <div class="FAQ_ques_section spacing_in_line">
+                <div>
+                    <h3><i class="fas fa-circle"></i> How do I pay?</h3>
+                    <p>
+                        You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle pick-up.
+                    </p>
+                    <h3>
+                        <i class="fas fa-circle"></i> Where can I pick up the bike from?
+                    </h3>
+                    <p>
+                        While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.
+                    </p>
+                </div>
+                <div>
+                    <h3>
+                        <i class="fas fa-circle"></i> What documents do I need to show while booking?
+                    </h3>
+                    <p>
+                        You need to show your original valid driving license and submit any one original government verified ID proof.
+                    </p>
+                    <h3>
+                        <i class="fas fa-circle"></i> Will I be getting a complimentary helmet?
+                    </h3>
+                    <p>
+                        Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring their own helmets.
+                    </p>
+                </div>
+            </div>
+
+            <p class="blog_FAQ_link">
+                If you have any more doubts, please visit our
+                <a href="faq1.html">FAQ Section</a> <br /> Our Daily Bike Renting Plan is the most affordable plan in India. Check out our Fleet and Pricing section on top for more detailed information and if you are a bike enthusiast, check
+                out our <a href="BLOGpage.html">BLOG</a>.<br>Announcing our exclusive association with <a href="https://strodebike.com/">StrodeBike - Smart Electric Cycles </a>enabled with ONN Nucleus to provide best riding experience.
+            </p>
+            <div class="popular_bike_for_rent">
+                <div class="popular_Bike_Heading">
+                    <h5>Popular Bikes for Rent:</h5>
+                </div>
+                <div>
+                    <p>Honda Activa for rent</p>
+                    <p>Pulsar 150 for rent</p>
+                    <p>Royal Enfield 350 Classic for rent</p>
+                    <p>Avenger 220 Street for rent</p>
+                    <p>Bajaj CT 100 for rent</p>
+                </div>
+                <div>
+                    <p>Yamaha FZ for rent</p>
+                    <p>Honda Dio for rent</p>
+                    <p>Avenger 220 Cruise for rent</p>
+                    <p>Dominar 400 ABS for rent</p>
+                    <p>Pulsar NS 200 for rent</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_upperPart spacing_in_line">
+            <div>
+                <h5>ONN BIKES</h5>
+                <ul>
+                    <li onclick="aboutus()">About Us</li>
+                    <li>Blog</li>
+                    <li>Careers</li>
+                    <li>FAQs</li>
+                    <li>Fleet and Pricing</li>
+                    <li>Offers</li>
+                </ul>
+            </div>
+            <div>
+                <h5>WE'RE AT</h5>
+                <ul>
+                    <li>Bengaluru</li>
+                    <li>Hyderabad</li>
+                    <li>Jaipur</li>
+                    <li>Mysuru</li>
+                    <li>Udaipur</li>
+                </ul>
+            </div>
+            <div>
+                <h5>POLICIES</h5>
+                <ul>
+                    <li>
+                        <a style="
+                  color: white;
+                  text-shadow: 1px 1px 1px rgb(34 33 33);
+                  text-decoration: none;
+                " href="https://www.onnbikes.com/policy.html#terms-of-use" target="_blank">Terms of Use</a
+              >
+            </li>
+            <li>
+              <a
+                style="
+                  color: white;
+                  text-shadow: 1px 1px 1px rgb(34 33 33);
+                  text-decoration: none;
+                "
+                href="https://www.onnbikes.com/policy.html#privacy-policy"
+                target="_blank"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                style="
+                  color: white;
+                  text-shadow: 1px 1px 1px rgb(34 33 33);
+                  text-decoration: none;
+                "
+                href="https://www.onnbikes.com/policy.html#pricing-policy"
+                target="_blank"
+                >Pricing Policy</a
+              >
+            </li>
+            <li>Insurance Policy</li>
+          </ul>
+        </div>
+        <div class="social_media_links_container">
+          <p>
+            ONN BIKES IS HERE TO REDEFINE THE WAY YOU TRAVEL! RENT A BIKE ON AN
+            HOURLY, DAILY, WEEKLY OR EVEN MONTHLY BASIS. WE ALSO HAVE LONG TERM
+            LEASING SOLUTIONS FOR BUSINESSES WHO ARE INTO LAST MILE DELIVERY
+            THROUGH TWO WHEELERS.
+          </p>
+          <div class="social_media_links spacing_in_line">
+            <div class="facebook_link"><i class="fab fa-facebook-f"></i></div>
+            <div class="twitter_link"><i class="fab fa-twitter"></i></div>
+            <div class="insta_link"><i class="fab fa-instagram"></i></div>
+            <div class="linkdin_link"><i class="fab fa-linkedin-in"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer_lowerPart">
+        <h6>Looking for Two Wheelers on Rent?</h6>
+        <p>
+          ONN Bikes is the most affordable bike rental company in India. We
+          specialize in motorcycle rental, from short-term motorbike rental to
+          long-term hiring or leasing, from bike tours to bike maintenance and
+          service – we have it all. We have bike rentals in Bangalore,
+          Hyderabad, Udaipur, Mysuru and now in Jaipur. We have a wide range of
+          geared, non-geared two wheelers and scooters for rent. We have become
+          one of India’s leading bike rentals because we simplified the process
+          and made it affordable. Have a look at our Offers and Deals section
+          specially tailored for your needs. You can now rent two wheelers in
+          Bangalore, Mysore, Hyderabad, Udaipur and Jaipur in just three easy
+          steps either through our website or by downloading our Bike Rental App
+          which is available on both Android and iOS. With our highly efficient
+          booking system, you can now sit back and relax while we do all your
+          work. Install our Android or iOS Bike Rental App to Hire a Bike in
+          Hyderabad in Seconds. We understand your biking needs and always place
+          it at the top of our priorities. Bike rentals in India couldn’t get
+          any easier!
+        </p>
+
+        <h6>Looking for Affordable Bike Renting?</h6>
+
+        <p>
+          We believe that each one of us is unique. Being unique means we all
+          have different likes and needs. So, we went out of our way to get
+          something for everyone. All you have to do is make up your mind and
+          pick one! It doesn’t matter if you’re a college student, a working
+          professional or a bike enthusiast who just wants to ride around the
+          city for the weekend, pick something that suits your lifestyle and
+          Wallet as well.
+        </p>
+
+        <h6>Introducing Monthly Bike Renting Subscription</h6>
+
+        <p>
+          Renting a bike everyday might seem like a task for many. So, we
+          introduced a monthly subscription package which allows you to be
+          flexible and rent a bike for a month or maybe more. You can rent a two
+          wheeler online on monthly, quarterly, half yearly or yearly basis.
+          From an hour to a year, motorbike rental was never so flexible.
+        </p>
+
+        <p class="footer_lowerPart_heading">OUR FLEET IN VARIOUS CITIES</p>
+        <p>
+          Scooters on rent - Honda Activa, Honda Dio Cruise Bikes on rent -
+          Bajaj Avenger 220 Cruise, Royal Enfield Classic 350, Royal Enfield
+          Thunderbird 350 Commuter Bikes on rent - Bajaj Pulsar 150, Yamaha FZ,
+          Bajaj Pulsar 180, Bajaj Avenger 220 Street Sports Bikes on rent - KTM
+          Duke 250, Honda CBR 150, Bajaj Dominar 400 ABS Adventure Bikes on rent
+          - Royal Enfield Himalayan Utility Bikes on rent - Honda Livo, Bajaj CT
+          100, Hero HF Deluxe, Bajaj Pulsar 135
+        </p>
+
+        <p class="footer_lowerPart_heading">MONTHLY SUBSCRIPTION</p>
+
+        <p>
+          Renting a bike every day might seem like a task for many. So, we
+          introduced a monthly subscription package which allows you to be
+          flexible and rent a bike for a month or maybe more. You can rent a
+          two-wheeler online on a monthly, quarterly, half-yearly or yearly
+          basis. From an hour to a year, motorbike rental was never so flexible.
+        </p>
+
+        <p class="footer_lowerPart_heading">ONN BIKES B2B</p>
+
+        <p>
+          Are you looking to partner with us? Look no further. We cater to all
+          companies which rely on last mile delivery in various cities across
+          India. Our low maintenance two-wheelers come as great assistance to
+          logistics, food delivery and bike taxi companies in Karnataka,
+          Telangana, Rajasthan and Delhi NCR region.
+        </p>
+      </div>
+      <hr />
+      <p class="copyRights">
+        © 2019 MOTOCRUIZER TECHNOLOGIES INDIA PVT.LTD. ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <div class="covid_div">
+      <div class="covid_div_remove" onclick="removePopUp('covid_div')"> X</div>
+      <img
+        src="https://www.onnbikes.com/img/covid-19-update.jpg"
+        alt=""
+        srcset=""
+        onclick="location.href = 'safety.html'"
+      />
+    </div>
+<!-- covid div -->
+
+    <div class="newYear_div">
+      <div
+        class="newYear_div_remove"
+        onclick="removePopUp('newYear_div')"
+      > X </div>
+      <img
+        src="https://marketingonn.s3.ap-south-1.amazonaws.com/WebsiteBanners/NewYear-2021-Desktop-Banner.jpg"
+        alt=""
+        srcset=""
+        onclick="location.href = '#'"
+      />
+    </div>
+
+
+
+    <div class="selectCity-overlay hide">
+      <div class="selectCity">
+        <div
+          class="removeSelectCity"
+          onclick="removePopUp('selectCity-overlay')"
+        ></div>
+        <div class="searchArea">
+          <div class="cityInputCont">
+            <input
+              type="text"
+              name="searchCity"
+              id="searchCity"
+              oninput="filterRideNowCities()"
+              placeholder="Enter your city to search"
+            />
+          </div>
+          <div class="CitySearchInputInfo">
+            <p>You've selected <br /><span>Bengaluru</span></p>
+            <p class="city-search-input-info-para2">
+              Tell us where you are and <br />we make sure you #RideONN
+            </p>
+          </div>
+        </div>
+        <div class="cityArea"></div>
+      </div>
+    </div>
+
+ 
+    <div class="loginPopupOverlay hide">
+      <div class="loginPop">
+        <div
+          class="loginPopRemove"
+          onclick="removePopUp('loginPopupOverlay')"
+        ></div>
+        <div class="logoSec"></div>
+        <div class="otpSec hide">
+          <div class="otp_heading">
+            <p>OTP VERIFY</p>
+          </div>
+
+          <input type="text" name="otp" id="otp" placeholder="OTP" />
+
+          <p class="otpInfo">
+            One Time Password (OTP) has been sent to your mobile, please enter
+            the same here to login.
+          </p>
+          <button onclick="verifyOTP()" class="verifyOTP">
+            Request Verify
+          </button>
+        </div>
+        <div class="formSec">
+          <div class="heading">
+            <span class="currForm" onclick="showSignup()">LOGIN</span> |
+            <span onclick="showSignup()">SIGNUP</span>
+          </div>
+          <div class="fb_google">
+            <div class="fbLogin">
+              <button>Facebook</button>
+            </div>
+            <div class="googleLogin">
+              <button>Google+</button>
+            </div>
+          </div>
+          <div class="divider">
+            <span>OR</span>
+          </div>
+          <form id="login_form">
+            <div class="inputCont">
+              <input
+                type="text"
+                name="email/number"
+                id="emailORPhone"
+                placeholder="EMAIL ID / Phone number"
+              />
+            </div>
+            <div class="inputCont">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="inputCont checkbox">
+              <label for="remember_me">
+                <input type="checkbox" name="remember_me" id="remember_me" />
+                Remember me
+              </label>
+            </div>
+            <button class="login-Btn" onclick="checkUsers(event)">Login</button>
+            <div>
+              <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+            </div>
+            </form>
+            <form id="signup_form" class="hide">
+                <div>
+                    <div>
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name" class="input-event" />
+                        <p class="required_field">This field is required</p>
+                        <p class="warning">No space and special character</p>
+                    </div>
+                    <div>
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="input-event" />
+
+                        <p class="warning">No space and special character</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" name="email" id="email" placeholder="Email Address" class="input-event" />
+                        <p class="required_field">This field is required</p>
+                        <p class="warning">Enter a valid email id</p>
+                    </div>
+                    <div>
+                        <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)" class="input-event" />
+                        <p class="required_field">This field is required</p>
+                        <p class="warning">Enter a valid mobile number</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-event" />
+                        <p class="required_field">This field is required</p>
+                        <p class="warning">Minimum 6 character</p>
+                    </div>
+                </div>
+                <button class="login-Btn" onclick="signupUser(event)">
+              Signup
+            </button>
+                <div>
+                    <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        <div class="contactUsForm-helpPopup-cont">
+            <div class="contactUsForm-helpPopup-heading-cont">
+                <h1 class="contactUsForm-helpPopup-heading">Contact ONN Support</h1>
+            </div>
+            <form id="contactUsForm-helpPopup">
+                <label for="name-popup">Your name</label>
+                <input type="text" name="name" id="name_popup" />
+
+                <label for="email-popup">Email <span>*</span></label>
+                <input type="text" name="email" id="email_popup" />
+
+                <label for="type">Type <span>*</span></label>
+                <div class="helpPopup-collapse-cont">
+                    <input type="button" name="type" id="type_popup" value="--" onclick="showHelpPopupCollapseContent()" />
+
+                    <div class="helpPopup-hide_content">
+                        <ul>
+                            <li>Breakdown/Accidents/Vehicle condition</li>
+                            <li>Bookings</li>
+                            <li>Payments</li>
+                            <li>Refund</li>
+                            <li>Extensions</li>
+                            <li>ONN Station</li>
+                            <li>Enquiries</li>
+                            <li>Cancellation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <label for="tell-us-more">Tell us more! <span>*</span></label>
+                <textarea name="tell-us-more" id="tell_us_more_popup" cols="30" rows="10"></textarea>
+                <button onclick="submitHelpPopup(event)">Send</button>
+                <p class="hide thank_you" style="color: green">
+                    Thank you for contacting us. We will get back to you!
+                </p>
+            </form>
+        </div>
+        <div class="helpPopup" onclick="showContactPopup()">
+            <i class="far fa-question-circle"></i> Help
+        </div>
+
+        <div class="fleetAndPricingOverlay-cont">
+            <div class="fleetAndPricingOverlay">
+                <div class="closeFleetAndPricing" onclick="move_to_FleetAndPricing()"></div>
+                <div class="fleetAndPricing_city_cont">
+                    <button class="hide_btn-fleetNPricing" onclick="move_to_FleetAndPricingCity()">
+            BENGALURU
+          </button>
+                    <div class="hide_content-fleetNPricing">
+                        <ul>
+                            <li>BENGALURU</li>
+                            <li>HYDERABAD</li>
+                            <li>JAIPUR</li>
+                            <li>GURUGRAM</li>
+                            <li>MYSURU</li>
+                            <li>PUNE</li>
+                            <li>UDAIPUR</li>
+                            <li>AHMEDABAD</li>
+                        </ul>
+                    </div>
+                    <div class="locations">
+                        <ul>
+                            <li>KOROMANGALA</li>
+                            <li>ELECTRONIC CITY</li>
+                            <li>MS RAMAIAH COLLEGE</li>
+                            <li>KUNDALAHALLI</li>
+                            <li>YELAHANKA</li>
+                            <li>SILK BOARD SRCM</li>
+                            <li>ELECTRONIC CITY HUB</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bike-slider-cont">
+                    <button onclick="slide(-1)"><i class="fas fa-angle-left"></i></button>
+
+                    <ul class="bike_cont_list">
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Activa.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Honda</h4>
+                                    <h2 class="bike_model">Activa</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Pulsar-150.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Bajaj</h4>
+                                    <h2 class="bike_model">Pulsar 150</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Thunderbird-350.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Royal Enfield</h4>
+                                    <h2 class="bike_model">Thunderbird 350</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Avenger-220-Cruise.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Bajaj</h4>
+                                    <h2 class="bike_model">Avenger Cruise 220</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Dominar-400.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Bajaj</h4>
+                                    <h2 class="bike_model">Dominar 400 ABS</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Duke-250.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">KTM</h4>
+                                    <h2 class="bike_model">Duke 250</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/FZ-v2.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Yamaha</h4>
+                                    <h2 class="bike_model">FZ</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="bike_cont">
+                                <div class="bike_img_cont">
+                                    <img src="https://get.onn.app/wp-content/uploads/2020/05/Hornet.jpg" alt="" srcset="" />
+                                </div>
+                                <div class="bike-details">
+                                    <h4 class="bike_name">Honda</h4>
+                                    <h2 class="bike_model">Hornet</h2>
+                                    <p>₹129<span>/ Daily(24 hrs)</span></p>
+                                    <p>₹549<span>/ Weekly(Mon-Fri)</span></p>
+                                    <p>₹2949<span>/ Monthly(30 days)</span></p>
+                                    <p>Minimum Billing <span>₹</span>79/4 hours</p>
+                                    <p class="bike-condition">*conditions apply</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button onclick="slide(+1)">
+            <i class="fas fa-angle-right"></i>
+          </button>
+                </div>
+            </div>
+        </div>
+        <div class="myAccountOverlay hide">
+            <div class="myAccount">
+                <div class="removeMyAccount" onclick="removePopUp('myAccountOverlay')"></div>
+                <div class="left-side">
+                    <div class="biker-icon"></div>
+                    <p class="user-name">Keyur Diwan</p>
+                    <p class="user-mail">Keyur@gmail.com</p>
+                    <p class="onn-credits">ONN Credits: 0</p>
+                    <hr />
+                    <button class="bookingHistory-myAccount active" onclick="changeRightOfAccount('historyCont','yourProfileCont','bookingHistory-myAccount','yourProfile-myAccount')">
+            <i class="fas fa-history"></i> Booking History
+          </button>
+                    <button class="yourProfile-myAccount" onclick="changeRightOfAccount('yourProfileCont','historyCont','yourProfile-myAccount','bookingHistory-myAccount')">
+            <i class="fa fa-home"></i> Your Profile
+          </button>
+                </div>
+
+                <div class="right-side">
+                    <div class="historyCont">
+                        <div class="no-booking-history">
+                            <h1>
+                                You have no previous booking with us. Please book a ride to see all updates regarding that in this page.
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="yourProfileCont hide">
+                        <div class="edit-account">
+                            <div class="removePencilIcon" onclick="enableInputBox('edit-account')"></div>
+                            <h3>Edit Account</h3>
+                            <input type="text" name="first_name" id="first_name-yourProfile" disabled value="Hema" />
+                            <input type="text" name="last_name" id="last_name-yourProfile" disabled value="Shyamala" />
+
+                            <div class="email-yourProfile">keyur@gmail.com</div>
+                            <div class="mobile-yourProfile">9924664558</div>
+
+                            <textarea name="address" id="address-yourProfile" cols="41" rows="2" placeholder="Enter Address" disabled></textarea>
+                            <button onclick="updateCurrUserProfile('profile')">
+                <i class="fas fa-sync-alt"></i> UPDATE
+              </button>
+                        </div>
+
+                        <div class="change-password">
+                            <div class="removePencilIcon" onclick="enableInputBox('change-password')"></div>
+                            <h3>Change Password</h3>
+                            <input type="password" name="old-password" id="old-password" disabled placeholder="Old Password" />
+                            <input type="password" name="new-password" id="new-password" disabled placeholder="New Password" />
+                            <input type="password" name="confirm-password" id="confirm-password" disabled placeholder="Confirm Password" />
+                            <button onclick="updateCurrUserProfile('password')">
+                <i class="fas fa-sync-alt"></i> CHANGE PASSWORD
+              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="paymentDoneOrNotOverlay hide">
+            <div class="paymentDoneOrNot">
+                <div class="paymentDoneRemove" onclick="removePopUp('paymentDoneOrNotOverlay')" style="color: black;"> X </div>
+                <div class="paymentResult" id="paymentDiv">
+                    <h1 style="color: #1d2d51; margin-top: -8%">BOOKING CONFIRMED.</h1>
+                    <h2 style="color: #1d2d51; margin-top: 0%">
+                        Booking Ref. Number: OR402058
+                    </h2>
+                    <h2 style="float: left; margin-top: -5%; margin-left:-5.4%; padding-right: 9%; background-color: #1d2d51; color: white;">PICKUP</h2>
+                    <div id="checkout-main-cont" style="clear: both;">
+                        <div id="bike-data">
+                            <div id="bike-img">
+                                <p id="company_name"></p>
+                                <p id="model-name"></p>
+                                <div id="bike-pic"></div>
+                                <p id="abc1">PICKUP & RETURN LOCATION</p>
+                                <a id="abc2"></a>
+                            </div>
+
+                            <div id="extra-info">
+                                <div id="extra-info-p">
+                                    <p>Late return first two hours of delay ₹ 200</p>
+                                    <p>₹ 18 per hour after first two hours of delay</p>
+                                </div>
+
+                                <div id="extra-info-extra">
+                                    <p id="tachometer"></p>
+                                    <p>100 km/hour</p>
+                                    <p id="roadSolid"></p>
+                                    <p id="freeKm"></p>
+                                    <p id="coinSolid"></p>
+                                    <p id="excess"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="paisa">
+                            <div id="start-end">
+                                <div id="start">
+                                    <p style="font-weight: bolder">START TRIP</p>
+
+                                    <div>
+                                        <div id="mnth">
+                                            <p id="month_day">27</p>
+                                            <p id="monthYear">JUL 21</p>
+                                        </div>
+
+                                        <div id="weekly">
+                                            <p id="day">Tuesday</p>
+                                            <p id="timehrs">06.00PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="end">
+                                    <p style="font-weight: bolder">END TRIP</p>
+
+                                    <div>
+                                        <div id="mnth1">
+                                            <p id="month_day1">28</p>
+                                            <p id="monthYear1">JUL 21</p>
+                                        </div>
+
+                                        <div id="weekly1">
+                                            <p id="day1">Wednesday</p>
+                                            <p id="timehrs1">04.00PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="refund-dep">
+                                <div></div>
+                                <div id="alpha">
+                                    <p>Refundable Deposit</p>
+                                    <p>This amount has to be paid at the time of vehicle delivery</p>
+                                </div>
+                                <div>
+                                    <p>₹0</p>
+                                </div>
+                            </div>
+
+                            <div id="bill-space">
+                                <p>PRICING</p>
+                                <div id="jug">
+                                    <p>Tariff (Inclusive of all taxes)</p>
+                                    <p id="price_without_discount">₹ 0</p>
+                                </div>
+
+
+
+
+
+                                <div id="total-pricing">
+                                    <p>Total Amount</p>
+                                    <p id="totalAmounttFinalPrice">₹848</p>
+                                </div>
+
+                                <div id="bhaukal">
+                                    <div>
+                                        <div class="dummy1" id="haebo1">
+                                            <img src="IMG_FILE/remove.png" alt="rmv" />
+                                        </div>
+
+                                        <p style="margin-left: 0%;  font-size: xx-small !important;">Excludes fuel</p>
+                                    </div>
+
+                                    <div>
+                                        <div class="dummy1" id="haebo">
+                                            <img src="IMG_FILE/righttick.svg" alt="tick" />
+                                        </div>
+
+                                        <p style="margin-left: -5%;  font-size: xx-small !important;">Includes all taxes</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tANDc">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+</body>
+
+</html>
+<script src="home.js"></script>

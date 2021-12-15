@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subbox1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.subbox2 {
+    display: flex;
+    flex-direction: column;
+    display: block;
+    width: 100%;
+}
+
+.paymentpage-header {
+    color: rgb(71, 71, 71);
+    font-weight: normal;
+}
+
+.h3,
+h3 {
+    font-size: 24px;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-method-tabs {
+    width: 100%;
+    padding: 23px;
+    box-shadow: 0px 6px 15px 0px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.payment-method-tabs2 {
+    width: 100%;
+    padding: 8px;
+    box-shadow: 0px 0px 3px rgb(31 31 31 / 20%);
+    background-color: #ffffff;
+}
+
+.payment-method-tabs3 {
+    width: 100%;
+    padding: 0;
+    box-shadow: 0px 0px 3px rgb(31 31 31 / 20%);
+    background-color: #ffffff;
+}
+
+.pimage {
+    text-align: center;
+    padding: 0;
+    width: 42px;
+}
+
+.pimage img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.pay-cc-subtitle {
+    font-size: 9px;
+    color: #AAAAAA;
+    line-height: 5px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.wise {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.color-phone-pe {
+    color: #673AB7;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.upi-input {
+    outline: 0px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+    background: rgb(255, 255, 255);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    border-radius: 0px;
+    padding-bottom: 12px;
+}
+
+.go-btn {
+    background-color: #1e2d51;
+    color: white;
+    border-radius: 50px;
+    min-width: 60px;
+    max-width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    /* margin: auto auto auto 50px; */
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+@media (min-width: 992px) {
+    .subbox1 {
+        width: 58.33333333%;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .subbox2 {
+        width: 41.66666667%;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1250px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.bike-company-name,
+.bike-modal-name {
+    margin: 0px;
+    color: #1e2d51;
+    line-height: 18px;
+    padding: 0;
+}
+
+.bike-modal-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bike-company-name {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.date-heading {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+
+.payment-delivery-tex,
+.btm-payment-start-trip,
+.btm-payment-end-trip {
+    margin: 0 3px;
+    padding: 0px 4px;
+    font-size: 11px;
+    line-height: 15px;
+    vertical-align: middle;
+    color: #1e2d51;
+}
+
+.payment-cal-date-mth {
+    line-height: 13px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.payment-cal-day-time {
+    vertical-align: middle;
+    line-height: 16px;
+    font-size: 11px;
+    padding-left: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.payment-calendar-day-time {
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.payment-cal-date {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.payment-calender-mth {
+    text-transform: uppercase;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.paymentbreakdown {
+    width: 100%;
+    display: block;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    background-color: #f1f1f1;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.confirm-subheading-text {
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 10px;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.weight {
+    font-weight: 400;
+}
