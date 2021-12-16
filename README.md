@@ -62,11 +62,18 @@
 
 
 # Click Below link for live Demo
-i'll add it soon..
+ <a href = "https://keyurdiwan.github.io/onnBikes/home.html">     https://keyurdiwan.github.io/onnBikes/home.html  </a>
 
 # Demo Video 
 
-  ![Demo video ](https://github.com/KeyurDiwan/onnBikes/blob/main/screenshots/video_demo.mp4?raw=true)
+<!--   ![Demo video ](https://github.com/KeyurDiwan/onnBikes/blob/main/screenshots/video_demo.mp4?raw=true) -->
+  
+  
+  
+
+https://user-images.githubusercontent.com/89068106/141447783-379bc1d5-8497-41b1-819a-602ba3d31249.mp4
+
+
 
 
 # connect with me

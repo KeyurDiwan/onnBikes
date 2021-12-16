@@ -131,20 +131,21 @@ var totalAmounttFinalPrice = document.getElementById("totalAmounttFinalPrice");
 totalAmounttFinalPrice.innerHTML = `₹${net_money}`;
 var payment_total_color = document.getElementById("payment-total");
 payment_color.addEventListener("click", test);
-
+var c = 0;
 function adder() {
     add++;
-    if (add % 2 != 0) {
+    if (add % 2 != 0 && c < 1) {
         discount_inner_image.style.display = "block";
         discount_image.style.border = "transparent";
         discount_image.appendChild(discount_inner_image);
         discount_price.style.fontSize = "15px";
         discount_price.style.color = "green";
         discount_price.innerHTML = `+₹${19}`;
-        net_money = net_money - net_money * 0.3;
+
+        // net_money = net_money - net_money * 0.3;
         net_money = net_money + 19;
         totalAmounttFinalPrice.innerHTML = `₹${net_money}`;
-
+        c++
         promo_code_flag1 = true;
     } else {
         discount_inner_image.style.display = "none";
@@ -160,7 +161,7 @@ function test() {
     if (add2 % 2 != 0) {
         if (promo_code_flag == true) {
             promo_code_flag = false;
-            net_money = net_money - net_money * 0.3;
+            // net_money = net_money - net_money * 0.3;
             if (promo_code_flag1 == true) {
                 promo_code_flag1 = false;
                 net_money = net_money + 19;
