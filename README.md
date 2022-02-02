@@ -22,7 +22,7 @@
 # Website flow
 
 
-  * Login and Signup
+  * Login & Signup
 
   ![Login and Signup ](https://github.com/KeyurDiwan/onnBikes/blob/main/screenshots/loginandsignup.PNG?raw=true)
 
